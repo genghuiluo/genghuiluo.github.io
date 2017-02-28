@@ -5,8 +5,7 @@ date: 2017-02-25 17:19:22 +0800
 categories: ETL 
 ---
 
-# Informatica PowerCenter 使用C/S 架构
-> （官方的说法是SOA架构），包含以下几个部分：
+> Informatica PowerCenter 使用CS 架构(官方的说法是SOA架构),包含以下几个部分：
 
 ### Server:
 
@@ -36,4 +35,4 @@ categories: ETL
 - Repository Manager(ps:只有它支持多个object导出xml)：管理PWC Repository，编 辑folder，user，group，权限分配
 
 如图：
-![](../_image/informatica_arthitecture.png)
+![]({{ site.url }}/assets/informatica_arthitecture.png)
