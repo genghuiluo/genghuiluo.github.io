@@ -18,7 +18,7 @@ Sub(i,j)=
 
 ### way #1, recursion
 
-{% highlight ruby %}
+``` ruby
 def num_distinct(s, t)
     if s.size<t.size
         0
@@ -30,7 +30,7 @@ def num_distinct(s, t)
         num_distinct(s[1..-1],t)
     end
 end
-{% endhighlight %}
+```
 
 ### way #2, iteration
 
