@@ -1,30 +1,48 @@
+#!/usr/local/bin/ruby
+
 ################################################################
 #   Copyright (C) 2017 All rights reserved.
 #   
 #   Filename：wrapper.rb
 #   Creator：Mark Luo
 #   Created Date：02/28/2017
-#   Description：
-#
+#   Description： wrapper for regular operations on Jekyll
+#               
 #   Modified History：
 #
 ################################################################
+
 require 'shellwords'
 require 'fileutils'
 require 'date'
+
 # usage
 def usage
-    puts "ruby #{$0} <options> <parameters>"
-    puts "e.g. create new post:"
-    puts " ruby #{$0} -n/--new-post <title>"
-    puts "e.g. commit & push updates:"
-    puts " ruby #{$0} -u/--update"
-    puts "e.g. debug @localhost:"
-    puts " ruby #{$0} -d/--debug"
-    puts "e.g. list recent n's posts"
-    puts " ruby #{$0} -5 # recent five posts"
-    puts "e.g. hygiene timestamp of posts"
-    puts " ruby #{$0} -h/--hygiene-timestamp"
+    puts <<-EOF
+#{$0} <options> <parameters>
+
+e.g.
+#1 create new post:
+#{$0} -n/--new-post <title>
+
+#2 commit & push updates:
+#{$0} -u/--update
+
+#3 debug @localhost:
+#{$0} -d/--debug
+
+#4 list recent n\'s posts
+#{$0} -5 # recent five posts
+
+#5 search with keyword
+#{$0} -s/--search <keyword>
+
+#6 edit, work with list/search 
+#{$0} -e/--edit <seq_in_list/search_output>
+
+#7 hygiene timestamp of posts
+#{$0} -h/--hygiene-timestamp
+    EOF
 end
 
 def new_post
@@ -60,7 +78,32 @@ def debug
 end
 
 def recent(num)
-    Dir.glob("./_posts/*").sort_by{|p| File.mtime(p)}.reverse.first(num).each{|p| puts "#{File.mtime(p)} | #{p}"}
+    File.open(".cache/posts.cache","w") do |f|
+        Dir.glob("./_posts/*").sort_by{|p| File.mtime(p)}.reverse.first(num).each_with_index do |p,i|
+            f.puts "#{i.to_s}\t#{p}" 
+            puts "#{i.to_s}\t#{p}\t#{File.mtime(p)}"
+        end
+    end
+end
+
+def search(key)
+    File.open(".cache/posts.cache","w") do |f|
+        Dir.glob("./_posts/*#{key}*",File::FNM_CASEFOLD).sort_by{|p| File.mtime(p)}.reverse.each_with_index do |p,i|
+            f.puts "#{i.to_s}\t#{p}" 
+            puts "#{i.to_s}\t#{p}\t#{File.mtime(p)}"
+        end
+    end
+end
+
+def edit(seq)
+    File.open(".cache/posts.cache","r").each_line do |l|
+        l_arr = l.strip.split("\t")
+        if l_arr[0] == seq
+            system "vim %s" %  Shellwords.escape(l_arr[1])
+            exit
+        end
+    end
+    puts "Error: No such sequence ID!"
 end
 
 def hygiene_timestamp
@@ -87,29 +130,25 @@ if ARGV.size == 0
     usage
     exit 1
 else
-    ARGV.each do |p|
-        case p
+    case ARGV[0]
         when "-n","--new_post"
             new_post
-            break
         when "-u","--update"
             update
-            break
         when "-d","--debug"
             debug
-            break
         when /\-[0-9]/
-            recent((p[1,p.size]).to_i)
-            exit
-            break
+            recent((ARGV[0][1,ARGV[0].size]).to_i)
         when "-h","--hygiene-timestamp"
             hygiene_timestamp
-            break
+        when "-s","--search"
+            search(ARGV[1])  
+        when "-e","--edit"
+            edit(ARGV[1])
         else
             puts "Error: invalid options #{p}!"
             usage
             exit
-        end
     end
 end
 
