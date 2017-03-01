@@ -38,7 +38,7 @@ e.g.
 #{$0} -s/--search <keyword>
 
 #6 edit, work with list/search 
-#{$0} -e/--edit <seq_in_list/search_output>
+#{$0} -e/--edit <seq_in_list/search_output> [--gedit] # use vim by default
 
 #7 hygiene timestamp of posts
 #{$0} -h/--hygiene-timestamp
@@ -95,11 +95,18 @@ def search(key)
     end
 end
 
-def edit(seq)
+def edit(seq,editor_opt)
+    editor = case editor_opt
+    when "--gedit"
+        "gedit"
+    else
+        "vim"
+    end
+
     File.open(".cache/posts.cache","r").each_line do |l|
         l_arr = l.strip.split("\t")
         if l_arr[0] == seq
-            system "vim %s" %  Shellwords.escape(l_arr[1])
+            system "#{editor} %s" %  Shellwords.escape(l_arr[1])
             exit
         end
     end
@@ -144,7 +151,7 @@ else
         when "-s","--search"
             search(ARGV[1])  
         when "-e","--edit"
-            edit(ARGV[1])
+            edit(ARGV[1],ARGV[2])
         else
             puts "Error: invalid options #{p}!"
             usage
