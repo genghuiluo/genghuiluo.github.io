@@ -46,7 +46,7 @@ e.g.
 end
 
 def new_post
-    puts "post title:"
+    puts "post title: (title doesn't allow '/'!!)"
     title = $stdin.gets.chomp
 
     puts "categories:"
