@@ -6,14 +6,14 @@ layout: default
     {% for post in site.posts %}
     <li>
         <div class="clearfix">
-            <div class="col col-5 right-align pr1">
-                <strong>【 {{ post.categories }} 】</strong>
+            <div class="col col-4 left-align pr1">
                 <span>{{ post.date | date: '%d %b, %Y' }}</span>
             </div>
-            <div class="col col-7 left-align pl1">
+            <div class="col col-8 right-align pl1">
                 <a href="{{ post.url | relative_url }}">
                     {{ post.title }}
                 </a>
+                <strong>【 {{ post.categories }} 】</strong>
             </div>
         </div>
     </li>
