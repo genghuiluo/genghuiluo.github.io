@@ -75,4 +75,31 @@ So you need to down load a driver of [DisplayLink](http://www.displaylink.com/pr
 
 [How to install DisplayLink software on Ubuntu?](http://support.displaylink.com/knowledgebase/articles/684649-how-to-install-displaylink-software-on-ubuntu)
 
+## ubuntu(16.04) “The system is running in low-graphics mode” error? 
+<img src="{{ site.url }}/assets/ubuntu-desktop_1.png" style="width:500px">
 
+The error happend after I installed not “official” Mesa PPA([Stable Mesa PPA Offers Latest Drivers on Ubuntu](http://www.omgubuntu.co.uk/2016/12/stable-mesa-drivers-ubuntu-ppa) to solve Octave's crash bug.
+
+To fix these use the PPA Purge tool to downgrade back to the Ubuntu archive’s older.
+
+[AskUbuntu](http://askubuntu.com/questions/307/how-can-ppas-be-removed)
+
+Use the `--remove` flag, similar to how the PPA was added:
+
+`sudo add-apt-repository --remove ppa:whatever/ppa`
+
+As a safer alternative, you can install ppa-purge:
+
+`sudo apt-get install ppa-purge`
+
+And then remove the PPA, downgrading gracefully packages it provided to packages provided by official repositories:
+
+`sudo ppa-purge ppa_name`
+
+Note that this will uninstall packages provided by the PPA, but not those provided by the official repositories. If you want to remove them, you should tell it to apt:
+
+`sudo apt-get purge package_name`
+
+You can also remove PPAs by deleting the .list files from /etc/apt/sources.list.d directory.
+
+Last but not least, you can also disable or remove PPAs from the "Software Sources" section in Ubuntu Settings with a few clicks of your mouse (no terminal needed).

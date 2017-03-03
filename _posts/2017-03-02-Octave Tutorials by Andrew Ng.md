@@ -20,7 +20,7 @@ logic
 - `1 ~= 0 % not equal to`
 - `1 && 0 % AND`
 - `1 || 0 % OR`
-- `xor(1,) % 异或`
+- `xor(1,0) % 异或`
 
 PS1(cmd promot): `PS1('>> ');`
 ```
