@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ubuntu-desktop 使用日志
-date: 2017-02-23 17:19:22 +0800
+date: 2017-03-04 12:22:11 +0800
 categories: linux
 ---
 ## ubuntu(>=15.10) 笔记本键盘背光bug

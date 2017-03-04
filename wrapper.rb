@@ -106,11 +106,30 @@ def edit(seq,editor_opt)
     File.open(".cache/posts.cache","r").each_line do |l|
         l_arr = l.strip.split("\t")
         if l_arr[0] == seq
+            # modify date
+            update_header_date(l_arr[1])
             system "#{editor} %s" %  Shellwords.escape(l_arr[1])
             exit
         end
     end
     puts "Error: No such sequence ID!"
+end
+
+def update_header_date(file) # file -- filename with path
+    tmp_fn = "#{file}.tmp"
+
+    File.open(tmp_fn, 'w') do |tmp|
+       
+        IO.foreach(file) do |l|
+            if l =~ /^date:\ (\d{4}\-\d{2}\-\d{2})\ (\d{2}\:\d{2}\:\d{2})(.*)$/
+                tmp.puts "date: #{Time.now.strftime("%Y-%m-%d %H:%M:%S %z")}"
+            else 
+                tmp.puts l
+            end
+        end
+    end
+
+    File.rename(tmp_fn, file)
 end
 
 def hygiene_timestamp
