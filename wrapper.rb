@@ -60,7 +60,9 @@ def new_post
         f.puts "categories: #{categories}"
         f.puts "---"
     end
-
+    puts title
+    puts "./_posts/#{Time.now.strftime("%Y-%m-%d")}-#{title}.md"
+    puts Shellwords.escape("./_posts/#{Time.now.strftime("%Y-%m-%d")}-#{title}.md")
     system "vim %s" %  Shellwords.escape("./_posts/#{Time.now.strftime("%Y-%m-%d")}-#{title}.md")
 end
 
