@@ -1,7 +1,7 @@
 ---
 layout: post
 title: sqlite3 sample usage
-date: 2017-02-23 17:19:22 +0800
+date: 2017-03-06 18:44:57 +0800
 categories: database
 ---
 [SQLite](https://www.sqlite.org/) is a software library that implements a *self-contained, serverless, zero-configuration, transactiona* SQL database engine
@@ -30,6 +30,7 @@ sqlite> .exit
 sqlite> .restore './test.db'  /* or .open './test.db' */
 sqlite> .tables /* show tables */
 test_table
+sqlite> .schema test_table /* desc table */
 ```
 
 ### 2. dump ddl
@@ -94,3 +95,4 @@ id          name
 2           mark      
 3           eric 
 ```
+> format output configuration can be written into ~/.sqliterc, which will automatically load when you try `sqlite3`
