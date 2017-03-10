@@ -1,7 +1,7 @@
 ---
 layout: post
 title: sqlite3 sample usage
-date: 2017-03-06 18:44:57 +0800
+date: 2017-03-07 19:39:37 +0800
 categories: database
 ---
 [SQLite](https://www.sqlite.org/) is a software library that implements a *self-contained, serverless, zero-configuration, transactiona* SQL database engine
@@ -96,3 +96,39 @@ id          name
 3           eric 
 ```
 > format output configuration can be written into ~/.sqliterc, which will automatically load when you try `sqlite3`
+
+### 7. create trigger
+syntax:
+```
+CREATE [TEMP | TEMPORARY] TRIGGER trigger-name
+[BEFORE | AFTER] database-event ON [database-name .]table-name
+trigger-action
+
+trigger-action is further defined as: 
+
+[FOR EACH ROW | FOR EACH STATEMENT] [WHEN expression]
+BEGIN
+trigger-step; [trigger-step;] *
+END
+```
+parameter:
+
+| Name                            | Description                                                                                                                                                                                           |
+|---------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| trigger-name                    | The name of the trigger. A trigger  must be distinct from the name of any other trigger for the same table. The name cannot be schema-qualified — the trigger inherits the schema of its table.       |
+| BEFORE AFTERINSTEAD OF          | Determines whether the function is called before, after, or instead of the event. A constraint trigger can only be specified as AFTER.                                                                |
+| database-event                  | One of the INSERT, UPDATE, DELETE that will fire the trigger.                                                                                                                                         |
+| table-name                      | The name of the table or view the trigger is for.                                                                                                                                                     |
+| FOR EACH ROW FOR EACH STATEMENT | Specifies whether the trigger procedure should be fired once for every row affected by the trigger event, or just once per SQL statement. If neither is specified, FOR EACH STATEMENT is the default. |
+| expression                      | A Boolean expression that determines whether the trigger function will actually be executed.                                                                                                          |
+| trigger-step                    | Action for the trigger, it is the sql statement.                                                                                                                                                      |
+
+sample
+```
+CREATE TRIGGER aft_insert AFTER INSERT ON emp_details  
+BEGIN  
+INSERT INTO emp_log(emp_id,salary,edittime)  
+    VALUES(NEW.employee_id,NEW.salary,current_date);  
+END;
+```
+
