@@ -1,7 +1,7 @@
 ---
 layout: post
 title: passenger+nginx+rails
-date: 2017-03-11 18:47:49 +0800
+date: 2017-03-11 19:37:24 +0800
 categories: web
 ---
 
@@ -10,7 +10,7 @@ AWS EC2 box
 ## Installing Passenger + Nginx
 https://www.phusionpassenger.com/library/install/nginx/install/oss/trusty/
 
-``` bash
+``` shell
 # Install our PGP key and add HTTPS support for APT
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 561F9B9CAC40B2F7
 sudo apt-get install -y apt-transport-https ca-certificates
@@ -30,7 +30,8 @@ uncomment `# include /etc/nginx/passenger.conf;`
 restart `sudo service nginx restart`
 
 chech passenger installation
-```
+
+``` shell
 sudo /usr/bin/passenger-config validate-install
 
 sudo /usr/sbin/passenger-memory-stats
@@ -39,7 +40,8 @@ sudo /usr/sbin/passenger-memory-stats
 ## Deploy Rails App
 https://www.phusionpassenger.com/library/config/nginx/intro.html
 https://www.phusionpassenger.com/library/config/nginx/reference/#setting_correct_passenger_ruby_value
-```
+
+``` shell
 rails new demo --skip-test-unit
 
 sudo apt install nodejs
@@ -50,10 +52,9 @@ sudo apt install nodejs
 
 modify /etc/nginx/nginx.conf
 
-```
+``` nginx
 http {
     xxxx
-
     server_names_hash_bucket_size 128;
 
     # Passenger
@@ -64,10 +65,9 @@ http {
         passenger_ruby /home/ubuntu/.rvm/gems/ruby-2.4.0/wrappers/ruby;
         passenger_sticky_sessions on;
     }
-
     xxx
 }
-                                                                                        }
+```
 
 access_log /var/log/nginx/access.log;
 error_log /var/log/nginx/error.log;

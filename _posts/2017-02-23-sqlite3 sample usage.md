@@ -1,11 +1,11 @@
 ---
 layout: post
 title: sqlite3 sample usage
-date: 2017-03-07 19:39:37 +0800
+date: 2017-03-11 19:47:51 +0800
 categories: database
 ---
 [SQLite](https://www.sqlite.org/) is a software library that implements a *self-contained, serverless, zero-configuration, transactiona* SQL database engine
-```
+``` sql
 > sqlite3
 SQLite version 3.11.0 2016-02-15 17:29:24
 Enter ".help" for usage hints.
@@ -19,7 +19,7 @@ sqlite> .help
 ## common cmd usage
 
 ### 1. bakcup&restore
-```
+``` sql
 sqlite> create table test_table (id integer,name string);
 sqlite> .backup './test.db'
 sqlite> .exit
@@ -34,7 +34,7 @@ sqlite> .schema test_table /* desc table */
 ```
 
 ### 2. dump ddl
-```
+``` sql
 sqlite> .output './test.ddl'  /* can use it to redirect query output,too */
 sqlite> .dump test_%
 sqlite> .exit
@@ -47,7 +47,7 @@ COMMIT;
 ```
 
 ### 3. attach specified database (main/temp are reserved for the primary database)
-```
+``` sql
 sqlite> attach database './test.db' as mydb;
 sqlite> .databases
 seq  name             file                                                      
@@ -57,7 +57,7 @@ seq  name             file
 ```
 
 ### 4. index
-```
+``` sql
 /* can only create on <main> db */
 sqlite> .open ./test.db
 sqlite> .database
@@ -73,7 +73,7 @@ CREATE INDEX test_index on test_table(id);
 ```
 
 ### 5. import a file
-```
+``` sql
 sqlite> select * from test_table;
 sqlite> .separator ","
 sqlite> .import raw.csv test_table
@@ -84,7 +84,7 @@ sqlite> select * from test_table;
 ```
 
 ### 6. format output
-```
+``` sql
 sqlite> .header on
 sqlite> .mode column
 sqlite> .width 10
@@ -99,7 +99,7 @@ id          name
 
 ### 7. create trigger
 syntax:
-```
+``` sql
 CREATE [TEMP | TEMPORARY] TRIGGER trigger-name
 [BEFORE | AFTER] database-event ON [database-name .]table-name
 trigger-action
@@ -124,7 +124,7 @@ parameter:
 | trigger-step                    | Action for the trigger, it is the sql statement.                                                                                                                                                      |
 
 sample
-```
+``` sql
 CREATE TRIGGER aft_insert AFTER INSERT ON emp_details  
 BEGIN  
 INSERT INTO emp_log(emp_id,salary,edittime)  

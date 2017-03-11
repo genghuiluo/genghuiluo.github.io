@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Octave Tutorials by Andrew Ng
-date: 2017-03-02 10:27:39 +0800
+date: 2017-03-11 19:57:44 +0800
 categories: machine_learning
 ---
 
@@ -23,7 +23,7 @@ logic
 - `xor(1,0) % 异或`
 
 PS1(cmd promot): `PS1('>> ');`
-```
+``` matlab
 >> a=3
 a =  3
 >> a=3; %semicolon suppress output
@@ -47,7 +47,7 @@ a =  3.1416
 ```
 
 matrix & vector
-```
+``` matlab
 >> A=[1 2;3 4;5 6]
 A =
 
@@ -129,14 +129,14 @@ Diagonal Matrix
 ```
 
 figure
-```
+``` matlab
 >> w=-6+sqrt(10)\*(randn(1,10000));
 >> hist(w)
 ```
 ![]({{ site.url }}/assets/octave_hist_1.jpg)
 
 ## part2: move data around
-```
+``` matlab
 >> A=[1 2;3 4;5 6;]
 A =
 
@@ -280,7 +280,7 @@ C =
      7     8     9
 ```
 ## part3: compute on data
-```
+``` matlab
 >> A=[1 2;3 4;5 6]
 A =
 
@@ -521,7 +521,7 @@ ans =
 ```
 
 ## part4: plot data
-```
+``` matlab
 >> t=[0:0.01:0.98];
 >> y1=sin(2*pi*4*t);
 >> plot(t,y1);
@@ -531,7 +531,7 @@ ans =
 ![]({{ site.url }}/assets/octave_plot_1.jpg)
 ![]({{ site.url }}/assets/octave_plot_2.jpg)
 
-```
+``` matlab
 >> plot(t,y1);
 >> hold on;
 >> plot(t,y2,'r');
@@ -547,7 +547,7 @@ ans =
 >> figure(1); plot(t,y1);
 >> figure(2); plot(t,y2); % two figure windows
 ```
-```
+``` matlab
 >> subplot(1,2,1) % divides plota 1x2 grid, access first element
 >> plot(t,y1);
 >> subplot(1,2,2);
@@ -555,7 +555,7 @@ ans =
 >> axis([0.5 1 -1 1])
 ```
 ![]({{ site.url }}/assets/octave_plot_4.jpg)
-```
+``` matlab
 >> clf; % clean plot
 >> A=magic(5)
 A =
@@ -569,14 +569,14 @@ A =
 >> imagesc(A)
 ```
 ![]({{ site.url }}/assets/octave_plot_5.jpg)
-```
+``` matlab
 >> imagesc(A)
 >> imagesc(A), colorbar, colormap gray;
 ```
 ![]({{ site.url }}/assets/octave_plot_6.jpg)
 
 ## part5: control statement
-```
+``` matlab
 >> v=zeros(10,1);
 >> for i=1:10,
 v(i)=2^i;
@@ -658,7 +658,7 @@ v =
 v(1) is two
 ```
 function
-```
+``` matlab
 %squareThisNumber.m
 function y = squareThisNumber(x)
 
@@ -685,7 +685,7 @@ y2 =  8
 a =  4
 b =  8
 ```
-<img src="{{ site.url }}/assets/octave_function_1.jpg" style="width:300px;">
+<img src="{{ site.url }}/assets/octave_function_1.jpg" style="width:50%;">
 ```
 %costFunctionJ.m
 function J = costFunctionJ(X, y, theta)
@@ -712,6 +712,8 @@ j =  2.3333
 
 ## part6: Vectorization
 <img src="{{ site.url }}/assets/octave_vector_1.jpg" style="width:500px;">
+
 <img src="{{ site.url }}/assets/octave_vector_2.jpg" style="width:500px;">
+
 <img src="{{ site.url }}/assets/octave_vector_3.jpg" style="width:500px;">
 
