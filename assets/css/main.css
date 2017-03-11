@@ -12,12 +12,17 @@ code {
     font-family: 'Inconsolata', monospace;
 }
 
+pre { 
+    white-space: pre; overflow: auto; 
+}
+
 a.site-title {
     text-decoration: none;
 }
 
 .site-title {
     color: #086788;
+    font-family: 'Griffy', cursive;
 }
 
 a.navigation-item {
@@ -28,3 +33,4 @@ a.navigation-item {
     color: #000000;
     border-bottom: 2px solid #f0c808;
 }
+

@@ -26,12 +26,15 @@ twitter_username: jekyllrb
 github_username:  jekyll
 
 # Build settings
-markdown: kramdown
+#markdown: kramdown
 theme: classic-jekyll-theme
 #theme: clean-jekyll-theme
 #theme: minima
-
-highlighter: rouge
+#highlighter: rouge
+markdown: kramdown
+kramdown:
+    input: GFM
+    syntax_highlighter: rouge
 
 gems:
   - jekyll-feed

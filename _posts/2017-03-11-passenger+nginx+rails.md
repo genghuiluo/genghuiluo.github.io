@@ -1,7 +1,7 @@
 ---
 layout: post
 title: passenger+nginx+rails
-date: 2017-03-11 01:00:11 +0800
+date: 2017-03-11 18:47:49 +0800
 categories: web
 ---
 
@@ -10,7 +10,7 @@ AWS EC2 box
 ## Installing Passenger + Nginx
 https://www.phusionpassenger.com/library/install/nginx/install/oss/trusty/
 
-```
+``` bash
 # Install our PGP key and add HTTPS support for APT
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 561F9B9CAC40B2F7
 sudo apt-get install -y apt-transport-https ca-certificates
