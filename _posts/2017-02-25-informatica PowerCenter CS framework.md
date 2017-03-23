@@ -1,7 +1,7 @@
 ---
 layout: post
 title: informatica PowerCenter CS framework
-date: 2017-02-25 17:19:22 +0800
+date: 2017-03-23 18:22:37 +0800
 categories: ETL 
 ---
 
@@ -34,5 +34,16 @@ categories: ETL
 - Workflow Monitor：控制检测session/workflow的运行
 - Repository Manager(ps:只有它支持多个object导出xml)：管理PWC Repository，编 辑folder，user，group，权限分配
 
-如图：
 ![]({{ site.url }}/assets/informatica_arthitecture.png)
+
+杜绍森的training:
+
+<img src="{{ site.url }}/assets/informatica_arthitecture_1.jpg" style="width:80%"/>
+
+<img src="{{ site.url }}/assets/informatica_arthitecture_2.jpg" style="width:80%"/>
+
+<img src="{{ site.url }}/assets/informatica_arthitecture_3.jpg" style="width:80%"/>
+
+<img src="{{ site.url }}/assets/informatica_arthitecture_4.jpg" style="width:80%"/>
+
+<img src="{{ site.url }}/assets/informatica_arthitecture_5.jpg" style="width:80%"/>
