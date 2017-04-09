@@ -1,7 +1,7 @@
 ---
 layout: post
 title: using SSL with Passenger
-date: 2017-04-09 12:55:10 +0800
+date: 2017-04-09 14:12:27 +0800
 categories: web
 ---
 
@@ -19,7 +19,16 @@ We recommend that most people with shell access use the [Certbot](https://certbo
 # https://certbot.eff.org/#centosrhel7-apache
 $ sudo yum install python-certbot-apache
 
-$ certbot --apache
+$ sudo certbot --apache
+
+## some certbot usages
+# view a list of the certificates Certbot
+$ sudo certbot certificates
+# sudo certbot renew [--cert-name example.com]
+# reovke a certificate
+$ sudo certbot revoke --cert-path /etc/letsencrypt/live/CERTNAME/cert.pem
+# delete a certificate
+$ sudo certbot delete --cert-name example.com
 ```
 ![]({{ site.url }}/assets/ssl_1.jpg)
 
