@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ubuntu-desktop 使用日志
-date: 2017-03-04 12:22:11 +0800
+date: 2017-04-09 19:21:06 +0800
 categories: linux
 ---
 ## ubuntu(>=15.10) 笔记本键盘背光bug
@@ -103,3 +103,7 @@ Note that this will uninstall packages provided by the PPA, but not those provid
 You can also remove PPAs by deleting the .list files from /etc/apt/sources.list.d directory.
 
 Last but not least, you can also disable or remove PPAs from the "Software Sources" section in Ubuntu Settings with a few clicks of your mouse (no terminal needed).
+
+## display hardware temperature
+
+[Psensor – A Graphical Hardware Temperature Monitoring Tool for Linux](http://www.tecmint.com/psensor-monitors-hardware-temperature-in-linux/)

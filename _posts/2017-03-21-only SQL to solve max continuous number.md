@@ -1,9 +1,14 @@
 ---
 layout: post
 title: only SQL to solve max continuous number
-date: 2017-03-21 21:01:52 +0800
+date: 2017-04-09 14:41:55 +0800
 categories: sql
 ---
+
+
+MySQL does not provide row_number() like Microsoft SQL Server, Oracle, or PostgreSQL. 
+
+But, you can use session variables to emulate the row_number function(http://www.mysqltutorial.org/mysql-row_number/).
 
 ``` sql
 mysql> select id from continuous_test;
@@ -58,4 +63,21 @@ GROUP BY t.offset;
 | 12                 |        12 |        1 |
 +--------------------+-----------+----------+
 
+```
+
+previous case show how to add a seq for each row, we can also add row number for each group
+
+``` sql
+# for example, group by customerNumber
+SELECT 
+    @row_number:=CASE
+        WHEN @customer_no = customerNumber THEN @row_number + 1
+        ELSE 1
+        END AS num,
+    @customer_no:=customerNumber as CustomerNumber,
+    paymentDate,
+    amount
+FROM
+    payments
+ORDER BY  customerNumber;
 ```
