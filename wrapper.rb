@@ -73,7 +73,7 @@ end
 
 def debug
     begin
-        system "bundle exec jekyll serve --incremental"
+        system "bundle exec jekyll serve"
     rescue SystemExit, Interrupt
         exit
     end
