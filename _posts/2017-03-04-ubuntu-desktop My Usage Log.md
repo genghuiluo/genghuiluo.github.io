@@ -1,7 +1,7 @@
 ---
 layout: post
-title: ubuntu-desktop 使用日志
-date: 2017-04-09 19:21:06 +0800
+title: ubuntu-desktop My Usage Log
+date: 2017-04-22 13:14:20 +0800
 categories: linux
 ---
 ## ubuntu(>=15.10) 笔记本键盘背光bug
@@ -85,19 +85,15 @@ To fix these use the PPA Purge tool to downgrade back to the Ubuntu archive’s 
 [AskUbuntu](http://askubuntu.com/questions/307/how-can-ppas-be-removed)
 
 Use the `--remove` flag, similar to how the PPA was added:
-
 `sudo add-apt-repository --remove ppa:whatever/ppa`
 
 As a safer alternative, you can install ppa-purge:
-
 `sudo apt-get install ppa-purge`
 
 And then remove the PPA, downgrading gracefully packages it provided to packages provided by official repositories:
-
 `sudo ppa-purge ppa_name`
 
 Note that this will uninstall packages provided by the PPA, but not those provided by the official repositories. If you want to remove them, you should tell it to apt:
-
 `sudo apt-get purge package_name`
 
 You can also remove PPAs by deleting the .list files from /etc/apt/sources.list.d directory.
@@ -107,3 +103,28 @@ Last but not least, you can also disable or remove PPAs from the "Software Sourc
 ## display hardware temperature
 
 [Psensor – A Graphical Hardware Temperature Monitoring Tool for Linux](http://www.tecmint.com/psensor-monitors-hardware-temperature-in-linux/)
+
+## single mini-DP port + MST = multi screen display
+> You don't need multi mini-DP ports or a dock.
+> If you have daisy-chaining Dell U2415 monitors on Intel HD Graphics, 
+> ubuntu 14.10/15.04+ appears to be supporting MST for Intel graphics out of the box.
+
+[(Dell KB) configure MST](http://www.dell.com/support/article/us/en/19/SLN295251/how-to-configure-u2415-monitor-daisy-chaining-on-intel-hd-graphics?lang=EN)
+
+<img src="{{ site.rul }}/assets/MST_1.jpg" style="width:40%">
+<img src="{{ site.rul }}/assets/MST_2.jpg" style="width:40%">
+
+## utilize CISCO AnyConnect without Clien
+
+```                                                                                                      
+$ sudo apt install openconnect network-manager-openconnect network-manager-openconnect-gnome               
+
+# by terminal                                                                                            
+$ openconnect -v -u xxx https://xxx.xxx.xxx.xxx                                                          
+``` 
+
+by gnome desktop, 
+1. System -> Network -> Create VPN connection -> select 'Cisco AnyConnect Compatible VPN(openconnect)',  
+2. Enter Getway (ip or domain)                                                                           
+	> ip don't allow any protocol(e.g. https://), this will cause 'Invalid Host Entry' Error          
+3. Keep others by default, Save, connect the VPN connection that you just created. 
