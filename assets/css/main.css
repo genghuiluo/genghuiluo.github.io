@@ -1,6 +1,7 @@
 html {
     font-family: 'PT Sans', sans-serif;
-    background-color: #ffffff;
+    /*background-color: #ffffff;*/
+    background-color: Aquamarine;
     color: #000000;
 }
 
@@ -21,7 +22,7 @@ a.site-title {
 }
 
 .site-title {
-    color: #086788;
+    color: CornflowerBlue;
 }
 
 a.navigation-item {
