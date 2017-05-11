@@ -1,12 +1,13 @@
 html {
-    font-family: 'PT Sans', sans-serif;
-    /*background-color: #ffffff;*/
+    /*font-family: 'PT Sans', sans-serif;
+    background-color: #ffffff;*/
+    font-family: 'Open Sans', sans-serif;
     background-color: Aquamarine;
     color: #000000;
 }
 
 a {
-    color: #000000;
+    color: CornflowerBlue;
 }
 
 code {
@@ -22,7 +23,8 @@ a.site-title {
 }
 
 .site-title {
-    color: CornflowerBlue;
+    color: LightSlateGrey;
+    font-family: 'Josefin Slab', serif;
 }
 
 a.navigation-item {
