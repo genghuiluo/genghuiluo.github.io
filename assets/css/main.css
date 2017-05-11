@@ -32,6 +32,10 @@ a.navigation-item {
 }
 
 .navigation-item {
-    color: #000000;
+    color: CornflowerBlue;
     border-bottom: 2px solid #f0c808;
+}
+
+h2 {
+    font-family: 'Josefin Slab', serif;
 }
