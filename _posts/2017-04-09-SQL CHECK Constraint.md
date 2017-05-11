@@ -1,8 +1,8 @@
 ---
 layout: post
 title: SQL CHECK Constraint
-date: 2017-04-09 14:34:00 +0800
-categories: sql
+date: 2017-05-11 21:32:19 +0800
+categories: magic_sql
 ---
 
 > https://www.w3schools.com/sql/sql_check.asp

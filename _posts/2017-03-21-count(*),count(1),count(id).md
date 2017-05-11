@@ -1,8 +1,8 @@
 ---
 layout: post
 title: count(*),count(1),count(id)
-date: 2017-03-21 10:15:22 +0800
-categories: sql
+date: 2017-05-11 21:32:04 +0800
+categories: magic_sql
 ---
 
 ``` mysql

@@ -1,8 +1,8 @@
 ---
 layout: post
 title: only SQL to solve max continuous number
-date: 2017-04-09 14:41:55 +0800
-categories: sql
+date: 2017-05-11 21:32:27 +0800
+categories: magic_sql
 ---
 
 

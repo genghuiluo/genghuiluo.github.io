@@ -1,8 +1,8 @@
 ---
 layout: post
 title: NULL join NULL
-date: 2017-03-21 21:02:00 +0800
-categories: sql
+date: 2017-05-11 21:32:12 +0800
+categories: magic_sql
 ---
 
 > NULL <> NULL ( NULL means unknow ） 
