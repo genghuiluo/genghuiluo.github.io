@@ -1,7 +1,7 @@
 ---
 layout: post
 title: sqlite3 sample usage
-date: 2017-03-11 19:47:51 +0800
+date: 2017-05-12 10:53:53 +0800
 categories: database
 ---
 [SQLite](https://www.sqlite.org/) is a software library that implements a *self-contained, serverless, zero-configuration, transactiona* SQL database engine
@@ -95,7 +95,7 @@ id          name
 2           mark      
 3           eric 
 ```
-> format output configuration can be written into ~/.sqliterc, which will automatically load when you try `sqlite3`
+> format output configuration can be written into [~/.sqliterc](https://github.com/genghuiluo/legacy/blob/master/.sqliterc), which will automatically load when you try `sqlite3`
 
 ### 7. create trigger
 syntax:
@@ -113,8 +113,8 @@ END
 ```
 parameter:
 
-| Name                            | Description                                                                                                                                                                                           |
-|---------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Name | Description |
+|---------------|----------------|
 | trigger-name                    | The name of the trigger. A trigger  must be distinct from the name of any other trigger for the same table. The name cannot be schema-qualified — the trigger inherits the schema of its table.       |
 | BEFORE AFTERINSTEAD OF          | Determines whether the function is called before, after, or instead of the event. A constraint trigger can only be specified as AFTER.                                                                |
 | database-event                  | One of the INSERT, UPDATE, DELETE that will fire the trigger.                                                                                                                                         |
@@ -131,4 +131,6 @@ INSERT INTO emp_log(emp_id,salary,edittime)
     VALUES(NEW.employee_id,NEW.salary,current_date);  
 END;
 ```
+
+### more in [SQL as understood by SQLite](https://www.sqlite.org/lang.html)
 
