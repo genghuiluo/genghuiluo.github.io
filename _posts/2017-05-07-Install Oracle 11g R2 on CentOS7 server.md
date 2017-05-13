@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Install Oracle 11g R2 on CentOS7 server (not desktop)
-date: 2017-05-12 12:53:40 +0800
+date: 2017-05-13 10:39:08 +0800
 categories: oracle
 ---
 
@@ -24,7 +24,7 @@ Increase size of TMPFS file system: https://ihazem.wordpress.com/2011/03/08/incr
 sudo yum install -y binutils compat-libstdc++-33 elfutils-libelf elfutils-libelf-devel gcc gcc-c++ glibc glibc-common glibc-devel libaio libaio-devel libgcc libstdc++ libstdc++-devel make numactl sysstat libXp unixODBC unixODBC-devel
 
 ```
-**pdksh** (not in most yum repository), my sharing [download @yun.baidu.com]()
+**pdksh** (not in most yum repository), my sharing [download @yun.baidu.com](https://pan.baidu.com/s/1pKMVzQF), passwd: rsky
 
 #### 3) user & group
 
