@@ -39,3 +39,7 @@ a.navigation-item {
 h2 {
     font-family: 'Josefin Slab', serif;
 }
+
+.highlight {
+    background-color: Azure !important;
+}
