@@ -1,11 +1,11 @@
 ---
 layout: post
-title: informatica PowerCenter CS framework
-date: 2017-03-23 18:22:37 +0800
+title: informatica PowerCenter architecture
+date: 2017-05-14 16:46:16 +0800
 categories: ETL 
 ---
 
-> Informatica PowerCenter 使用CS 架构(官方的说法是SOA架构),包含以下几个部分：
+> Informatica PowerCenter is client-server architecture(官方的说法是SOA(Service Oriented Architecture, 面向服务架构),包含以下几个部分：
 
 ### Server:
 
@@ -16,7 +16,7 @@ categories: ETL
 - Integration Service: 从PWC repository （保存了所有mapping/workflow的元数据）获取workflow的元数据，执行DTM进程(IS可以跨多个nodes，支持grid)。
 - Repository Service: 管理连接PWC repository
 
-> 以上两种都属于application service，informatica有以下几种： 
+> 以上两种都属于application service，informatica有以下几种application service： 
     
 - PWC Repository Service 
 - PWC Integration Service 
