@@ -1,7 +1,7 @@
 ---
 layout: post
 title: using SSL with Passenger
-date: 2017-04-09 14:12:27 +0800
+date: 2017-05-20 18:42:45 +0800
 categories: web
 ---
 
@@ -29,6 +29,9 @@ $ sudo certbot certificates
 $ sudo certbot revoke --cert-path /etc/letsencrypt/live/CERTNAME/cert.pem
 # delete a certificate
 $ sudo certbot delete --cert-name example.com
+
+# create new certificate
+$ sudo certbot --renew-with-new-domains
 ```
 ![]({{ site.url }}/assets/ssl_1.jpg)
 
