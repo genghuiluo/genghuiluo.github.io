@@ -1,13 +1,13 @@
 ---
 layout: post
 title: expect script sample
-date: 2017-02-23 17:19:22 +0800
+date: 2017-05-21 19:34:31 +0800
 categories: linux
 ---
 > Expect scripting language is used to feed input automatically to an interactive program.
 [wiki](http://www.thegeekstuff.com/2010/10/expect-examples)
 
-### ssh login with brach
+### ssh login with expect
 ``` bash
 ssh -i ~/.ssh/id_rsa_erhuang_core01 dw_dev@gauls.vip.ebay.com "cd $GAULS_DIR; expect <<EOF
 spawn sftp ${SFTP_OPT} ${sftp_user}@${sftp_host}
