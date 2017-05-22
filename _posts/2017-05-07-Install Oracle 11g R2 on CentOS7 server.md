@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Install Oracle 11g R2 on CentOS7 server (not desktop)
-date: 2017-05-13 10:39:08 +0800
+date: 2017-05-22 16:07:20 +0800
 categories: oracle
 ---
 
@@ -127,3 +127,25 @@ INFO: Error Message:PRVF-7532 : Package "unixODBC-devel-2.2.11 (i386)" is missin
 ```
 
 > ref: http://www.cnblogs.com/mophee/archive/2013/06/01/3107137.html
+
+### start oracle service after reboot
+
+> http://www.cnblogs.com/mchina/archive/2012/11/27/2782993.html
+
+enable oracle instance
+```
+# switch oracle user
+su oracle
+sqlplus / as sysdba
+
+SQL> startup
+```
+
+check listener
+```
+lsnrctl status
+lsnrctl start
+```
+
+
+
