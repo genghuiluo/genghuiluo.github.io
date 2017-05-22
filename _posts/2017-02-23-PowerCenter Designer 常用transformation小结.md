@@ -1,7 +1,7 @@
 ---
 layout: post
 title: PowerCenter Designer 常用transformation小结
-date: 2017-02-23 17:19:22 +0800
+date: 2017-05-22 17:34:21 +0800
 categories: ETL
 ---
 ## Source Qualifier
@@ -30,7 +30,7 @@ categories: ETL
 
 ## Lookup
 
-> lookup is the most complicate transformation in my mind, [view more]()
+> lookup is the most complicate transformation in my mind, [view more]({{ site.url }}/etl/2017/05/22/dynamic-lookup.html)
 
 1. Lookup 根椐输入值从数据库或者平面文件中查找数据； 
 2. Lookup 分为连接型和非连接型的： 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: informatica PowerCenter architecture
-date: 2017-05-14 16:46:16 +0800
+date: 2017-05-22 17:34:08 +0800
 categories: ETL 
 ---
 
