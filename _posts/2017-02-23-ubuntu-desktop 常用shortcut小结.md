@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ubuntu-desktop 常用shortcut小结
-date: 2017-02-23 17:19:22 +0800
+date: 2017-05-25 10:00:28 +0800
 categories: linux
 ---
 ## ubuntu unity
@@ -40,4 +40,6 @@ categories: linux
 - F6, switch between address/bookmark/page, combine with arrows/esc/enter
 - F1, help
 
+## Oracle SQL Developer
 
+- alt + quote, upper/lower case
