@@ -3,7 +3,15 @@ html {
     background-color: #ffffff;*/
     font-family: 'Open Sans', sans-serif;
     background-color: Black; 
-    color: Aquamarine;
+    color: Black;
+    /* Perfect Full Page Background Image
+     * css-tricks https://css-tricks.com/perfect-full-page-background-image/
+     */
+    background: url(../google_bg.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 a {
@@ -41,5 +49,5 @@ h2 {
 }
 
 .highlight {
-    background-color: Azure !important;
+    background-color: Black !important; /* important for no overwrite */
 }
