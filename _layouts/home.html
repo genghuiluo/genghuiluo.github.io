@@ -5,8 +5,7 @@ layout: default
 {% assign sorted_cats = site.categories | sort %}
 {% for category in sorted_cats %}
     
-    <h2 id="{{category[0] | uri_escape | downcase }}">{{category[0] | upcase}}</H2>
-
+    <!--<h2 id="{{category[0] | uri_escape | downcase }}">{{category[0] | upcase}}</h2>-->
     {% assign sorted_posts = category[1] | reversed %}
     <ul class="list-reset">
         {% for post in sorted_posts %}
@@ -27,6 +26,7 @@ layout: default
         </li>
         {% endfor %}
     </ul> 
-
+    <!-- delimeted line between categories -->
+    <hr class="line"></hr> 
 {% endfor %}
 

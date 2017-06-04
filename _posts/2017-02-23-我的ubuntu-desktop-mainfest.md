@@ -1,84 +1,96 @@
 ---
 layout: post
-title: my ubuntu-desktop-manifest
-date: 2017-06-04 12:11:03 +0800
+title: My Ubuntu(16.04LTS) Desktop Manifest
+date: 2017-06-04 13:47:50 +0800
 categories: linux
 ---
+
 ### create a bootable USB flash drive from terminal with corresponding linux-desktop.iso
 > get the device name of your USB with `df -h`
 > e.g. /dev/sdb1
 
-```
-dd if=/path/to/linux-desktop.iso of=/dev/sdx
-# not sdx1 !!
-sync
-eject /sdx1
+``` shell
+> dd if=/path/to/linux-desktop.iso of=/dev/sdx
+# e.g. dd if=/path/to/linux-desktop.iso of=/dev/sdb
+# Notice: not sdb1 !!!
+> sync
+> eject /sdx1 
+# e.g. eject /sdb1
 ```
 
 ### shadowsocks-qt5
-> across great wall 
-
+> First of all, Let's across Great Wall 
 [@github](https://github.com/shadowsocks/shadowsocks-qt5)
 [installation wiki](https://github.com/shadowsocks/shadowsocks-qt5/wiki/%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97)
 
 ### chrome on linux 
-
 [http://dl.google.com/linux/chrome/deb/](https://www.google.com/chrome/browser/desktop/index.html)
 
-```
-sudo dpkg -i google-chrome-stable_current_amd64.deb
+``` shell
+> sudo dpkg -i google-chrome-stable_current_amd64.deb
 
-# start chrome with a proxy 
-google-chrome-stable --proxy-server="127.0.0.1:1080"
-
+# start chrome with a proxy, only for chrome linux, you can set up proxy manually on windows/OSX 
+> google-chrome-stable --proxy-server="127.0.0.1:1080"
 # login in google accout to sync your bookmarks and extensions
 ```
 
-### 输入法
+### Input Method 输入法
 
-`im-config # select ibus or `
+`im-config # select ibus or fcitx`
 
-- ibus (Chinese (Pinyin))
-- fcitx [sogou pinyin](http://pinyin.sogou.com/linux/?r=pinyin)
+- ibus, (Chinese (Pinyin))
 
-#### ibus
-setting --> text entry --> add Chinese (Pinyin)
+    Setting --> Text Entry --> add "Chinese (Pinyin)"
+- fcitx, 
+    1. [sogou pinyin](http://pinyin.sogou.com/linux/?r=pinyin)
+        ``` shell
+        > sudo dpkg -i ~/Downloads/sogoupinyin_2.1.0.0082_amd64.deb
+        > sudo apt -f install # solve dependency
+        > sudo dpkg -i ~/Downloads/sogoupinyin_2.1.0.0082_amd64.deb
+        #!!restart!!
+        > fcitx-config-gtk3 # or fcitx-configtool
+        # --> add input method --> sougou pinyin
+        ```
 
-#### sogou pinyin
+        sogou & fcitx bug on Ubuntu 16.04 LTS : ![]({{ site.url }}/assets/sogou_fcitx_bug.jpg)
+        > since SouGou PinYin for Linux is developed by Ubuntu Kylin Team and Sougou company. 
+
+    2. google_pinyin
     
-```
-sudo dpkg -i ~/Downloads/sogoupinyin_2.1.0.0082_amd64.deb
-sudo apt -f install # dependency
-sudo dpkg -i ~/Downloads/sogoupinyin_2.1.0.0082_amd64.deb
-!!restart!!
-fcitx-config-gtk3 # or fcitx-configtool
-# --> add input method --> sougou pinyin
-```
+        > [2 Best Chinese PinYin Input Method in Ubuntu 16.04](http://ubuntuhandbook.org/index.php/2016/07/2-best-chinese-pinyin-im-ubuntu-16-04/)
+    
+### $SHELL [fish](https://fishshell.com/)
+``` shell
+> lsb_release -cs
+xenial
 
-sogou & fcitx bug
-![]({{ site.url }}/assets/sogou_fcitx_bug.jpg)
+# https://launchpad.net/~fish-shell/+archive/ubuntu/release-2/+packages
+# download corresponding package due to code name of your ubuntu release, e.g. xenial
+> sudo dpkg -i sudo dpkg -i fish_2.6.0-1-xenial_amd64.deb
+> sudo dpkg -i fish-common_2.6.0-1-xenial_all.deb
+> sudo apt install -f # solve dependency
 
-### [fish](https://fishshell.com/)
+> fish -v                                                                                                                                           13:52:31
+> fish, version 2.6.0
+```
+> [omf(oh my fish, like oh my zsh as you know)](https://github.com/oh-my-fish/oh-my-fish), since I use rvm which officailly support bash/zsh, while I can install a [rvm plugin wih omf](https://github.com/oh-my-fish/plugin-rvm), this plugin make rvm work perfectly with fish. 
 
 ### etc
 
-> ubuntu software
-
-- player: vlc
-- downloader: deluge
-- game: steam
-- screenshot: shutter
-- package management: synaptic package manager/GDebi package installer
-
-> others
-
-- [zeal](https://zealdocs.org/)
-- [网易云音乐](http://music.163.com/#/download)
-- [youtube-dl](https://github.com/rg3/youtube-dl)
-- [you-get](https://github.com/soimort/you-get)
+1. ubuntu software
+    - player: vlc
+    - downloader: deluge
+    - game: steam
+    - screenshot: shutter
+    - package management: synaptic package manager/GDebi package installer
+2. others
+    - [zeal](https://zealdocs.org/)
+    - [网易云音乐](http://music.163.com/#/download)
+    - [youtube-dl](https://github.com/rg3/youtube-dl)
+    - [you-get](https://github.com/soimort/you-get)
 
 
-## developer
+## For developer
 
 ### Java
 

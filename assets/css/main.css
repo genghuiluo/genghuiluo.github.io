@@ -31,7 +31,7 @@ a.site-title {
 }
 
 .site-title {
-    color: LightSlateGrey;
+    color: SlateGray;
     font-family: 'Josefin Slab', serif;
 }
 
@@ -40,7 +40,7 @@ a.navigation-item {
 }
 
 .navigation-item {
-    color: CornflowerBlue;
+    color: LightSkyBlue;
     border-bottom: 2px solid #f0c808;
 }
 
@@ -50,4 +50,11 @@ h2 {
 
 .highlight {
     background-color: Black !important; /* important for no overwrite */
+}
+
+/* hr, delimeted line between categories */
+.line{
+  border: 0;
+  background-color: LightSlateGray;
+  height: 3px;
 }
