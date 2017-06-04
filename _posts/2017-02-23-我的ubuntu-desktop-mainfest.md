@@ -1,7 +1,7 @@
 ---
 layout: post
-title: 我的ubuntu-desktop-mainfest
-date: 2017-02-23 17:19:22 +0800
+title: my ubuntu-desktop-manifest
+date: 2017-06-04 12:11:03 +0800
 categories: linux
 ---
 ### create a bootable USB flash drive from terminal with corresponding linux-desktop.iso
