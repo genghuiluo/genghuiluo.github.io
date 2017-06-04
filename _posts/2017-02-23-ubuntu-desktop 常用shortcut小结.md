@@ -1,7 +1,7 @@
 ---
 layout: post
-title: ubuntu-desktop 常用shortcut小结
-date: 2017-05-25 10:00:28 +0800
+title: ubuntu-desktop shortcut cheatsheet
+date: 2017-06-04 16:55:13 +0800
 categories: linux
 ---
 ## ubuntu unity

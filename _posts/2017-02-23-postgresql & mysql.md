@@ -1,7 +1,7 @@
 ---
 layout: post
-title: postgresql & mysql
-date: 2017-02-23 17:19:22 +0800
+title: compare PgSQL & MySQL
+date: 2017-06-04 16:54:03 +0800
 categories: database
 ---
 [转载知乎](http://www.zhihu.com/question/20010554/answer/62628256)

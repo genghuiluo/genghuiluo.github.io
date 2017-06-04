@@ -1,7 +1,7 @@
 ---
 layout: post
-title: 对比system exec source
-date: 2017-02-23 17:19:22 +0800
+title: Compare system/exec/source in bash
+date: 2017-06-04 17:02:14 +0800
 categories: linux
 ---
 #### create a test shell script

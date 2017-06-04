@@ -1,7 +1,7 @@
 ---
 layout: post
-title: shell 特殊变量
-date: 2017-02-23 17:19:22 +0800
+title: built-in variables(e.g. $$) in shell
+date: 2017-06-04 17:10:11 +0800
 categories: linux
 ---
 
