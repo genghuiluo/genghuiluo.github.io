@@ -15,7 +15,7 @@ html {
 }
 
 a {
-    color: CornflowerBlue;
+    color: MediumSeaGreen;
 }
 
 code {
@@ -31,7 +31,7 @@ a.site-title {
 }
 
 .site-title {
-    color: SlateGray;
+    color: Crimson;
     font-family: 'Josefin Slab', serif;
 }
 
@@ -40,8 +40,8 @@ a.navigation-item {
 }
 
 .navigation-item {
-    color: LightSkyBlue;
-    border-bottom: 2px solid #f0c808;
+    color: DodgerBlue;
+    border-bottom: 2px solid Gold;
 }
 
 h2 {
@@ -55,6 +55,6 @@ h2 {
 /* hr, delimeted line between categories */
 .line{
   border: 0;
-  background-color: LightSlateGray;
+  background-color: Gold;
   height: 3px;
 }

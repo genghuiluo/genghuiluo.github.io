@@ -25,3 +25,10 @@ gem "rouge"
 group :jekyll_plugins do
    gem "jekyll-feed", "~> 0.6"
 end
+
+
+# Please add the following to your Gemfile to avoid polling for changes:
+# gem 'wdm', '>= 0.1.0' # if Gem.win_platform?
+# THIS NOT WORK ON CYGWIN(WIN8 64)
+# https://github.com/rubygems/rubygems/issues/977
+
