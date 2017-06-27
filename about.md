@@ -24,5 +24,4 @@ I am a ruby & rails guy, basically.
 Ruby China ID: markluo
 
 My wechat subscription:
-
-![]({{ site.url }}/assets/mark_wx.jpeg)
+<img src="{{ site.url }}/assets/mark_wx.jpeg" style="width:20%"/>
