@@ -1,7 +1,7 @@
 ---
 layout: post
 title: built-in variables(e.g. $$) in shell
-date: 2017-06-04 17:10:11 +0800
+date: 2017-06-23 11:00:39 +0800
 categories: linux
 ---
 

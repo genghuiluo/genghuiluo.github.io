@@ -44,8 +44,15 @@ a.navigation-item {
     border-bottom: 2px solid Gold;
 }
 
+/* categories */
+i {
+    color: DodgerBlue;
+}
+
+
 h2 {
     font-family: 'Josefin Slab', serif;
+    color: Crimson;
 }
 
 .highlight {
