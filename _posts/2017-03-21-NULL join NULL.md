@@ -1,7 +1,7 @@
 ---
 layout: post
 title: NULL join NULL
-date: 2017-05-11 21:32:12 +0800
+date: 2017-06-27 19:12:45 +0800
 categories: magic_sql
 ---
 
