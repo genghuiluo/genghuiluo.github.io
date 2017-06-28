@@ -50,9 +50,9 @@ i {
 }
 
 
-h2 {
-    font-family: 'Josefin Slab', serif;
-    color: Crimson;
+h2,h3 {
+    color: MediumSeaGreen;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 .highlight {
