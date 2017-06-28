@@ -49,10 +49,14 @@ i {
     color: #4885ed;
 }
 
-
-h2,h3 {
+/* post tile */
+h2 {
     color: #3cba54;
     font-family: 'Ubuntu', sans-serif;
+}
+
+h3 {
+    color: #4885ed;
 }
 
 .highlight {
