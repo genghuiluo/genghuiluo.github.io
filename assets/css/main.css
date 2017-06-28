@@ -15,7 +15,7 @@ html {
 }
 
 a {
-    color: MediumSeaGreen;
+    color: #3cba54;
 }
 
 code {
@@ -31,7 +31,7 @@ a.site-title {
 }
 
 .site-title {
-    color: Crimson;
+    color: #db3236;
     font-family: 'Josefin Slab', serif;
 }
 
@@ -40,18 +40,18 @@ a.navigation-item {
 }
 
 .navigation-item {
-    color: DodgerBlue;
-    border-bottom: 2px solid Gold;
+    color: #4885ed;
+    border-bottom: 2px solid #f4c20d;
 }
 
 /* categories */
 i {
-    color: DodgerBlue;
+    color: #4885ed;
 }
 
 
 h2,h3 {
-    color: MediumSeaGreen;
+    color: #3cba54;
     font-family: 'Ubuntu', sans-serif;
 }
 
@@ -62,6 +62,6 @@ h2,h3 {
 /* hr, delimeted line between categories */
 .line{
   border: 0;
-  background-color: Gold;
+  background-color: #f4c20d;
   height: 3px;
 }
