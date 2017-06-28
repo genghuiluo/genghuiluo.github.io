@@ -1,8 +1,8 @@
 ---
 layout: post
 title: add gmail without VPN
-date: 2017-04-28 16:45:26 +0800
-categories: notes
+date: 2017-06-28 11:49:28 +0800
+categories: lifecycle
 ---
 **no vpn required**
 > google考虑到双重验证阻碍了app的使用，所以如下：
@@ -19,17 +19,18 @@ Don’t worry—we’ll generate one for you, and you won’t need to remember i
 
 ## On Your Mobile Mail App
 > e.g. Smartisan M1
-#### 1) access https://security.google.com/settings/security/apppasswords
 
-#### 2) login your google account and generate an app password
+1) access https://security.google.com/settings/security/apppasswords
+
+2) login your google account and generate an app password
 
 <img src="{{ site.url }}/assets/add_gmail_1.jpg" style="width:50%;"/>
 
-#### 3) you will get a 16 digital code
+3) you will get a 16 digital code
 
 <img src="{{ site.url }}/assets/add_gmail_2.jpg" style="width:50%;"/>
 
-#### 4) use the 16 digital code as password when you configure your mail app on you smart phone
+4) use the 16 digital code as password when you configure your mail app on you smart phone
 
 <img src="{{ site.url }}/assets/add_gmail_3.jpg" style="width:50%;"/>
 
