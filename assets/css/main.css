@@ -3,11 +3,11 @@ html {
     background-color: #ffffff;*/
     font-family: 'Open Sans', sans-serif;
     background-color: Black; 
-    color: Black;
+    color: White;
     /* Perfect Full Page Background Image
      * css-tricks https://css-tricks.com/perfect-full-page-background-image/
      */
-    background: url(../google_bg.jpg) no-repeat center center fixed;
+    background: url(../bg_light.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
