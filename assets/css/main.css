@@ -3,7 +3,8 @@ html {
     background-color: #ffffff;*/
     font-family: 'Open Sans', sans-serif;
     background-color: Black; 
-    color: White;
+    /* color: White; */
+    color: #3cba54;
     /* Perfect Full Page Background Image
      * css-tricks https://css-tricks.com/perfect-full-page-background-image/
      */
@@ -15,7 +16,7 @@ html {
 }
 
 a {
-    color: #3cba54;
+    color: White;
 }
 
 code {
@@ -51,7 +52,7 @@ i {
 
 /* post tile */
 h2 {
-    color: #3cba54;
+    color: White;
     font-family: 'Ubuntu', sans-serif;
 }
 
@@ -67,5 +68,5 @@ h3 {
 .line{
   border: 0;
   background-color: #f4c20d;
-  height: 3px;
+  height: 1px;
 }
