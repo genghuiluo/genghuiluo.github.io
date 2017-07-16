@@ -1,7 +1,7 @@
 ---
 layout: post
 title: have a try with E-Chart
-date: 2017-07-16 23:43:48 +0800
+date: 2017-07-16 23:46:52 +0800
 categories: web
 ---
 
@@ -26,6 +26,10 @@ $.getJSON('https://dev.genghuiluo.cn/feed/weibo/realtimehot.json', function(data
   	        var option = {
             title: {
                 text: '微博实时 top10 关键字(最近一周)'
+				textStyle: {  
+        			fontWeight: 'normal',              //标题颜色  
+        			color: 'white'  
+    			}, 
             },
             tooltip: {},
             legend: {
@@ -35,23 +39,23 @@ $.getJSON('https://dev.genghuiluo.cn/feed/weibo/realtimehot.json', function(data
                 data: xdata,
 				axisLine:{  
                     lineStyle:{  
-                        color:'yellow',  
-                        width:2  
+                        color:'green',  
+                        width:1  
                     }  
                 },
 				axisLabel: {
 				     interval: 0, //横轴信息全部显示
-				     rotate: 60,//60度角倾斜显示
-				  formatter:function(val){
-				     return val.split("").join("\n"); //横轴信息文字竖直显示
-				    } 
+				     rotate: 90,//60度角倾斜显示
+				     formatter:function(val){
+				        return val.split("").join("\n"); //横轴信息文字竖直显示
+				     } 
                 }
             },
             yAxis: {
             	axisLine:{  
                     lineStyle:{  
-                        color:'yellow',  
-                        width:2  
+                        color:'green',  
+                        width:1  
                     }  
                 }
             },
