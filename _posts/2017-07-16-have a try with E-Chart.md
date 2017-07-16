@@ -1,12 +1,12 @@
 ---
 layout: post
 title: have a try with E-Chart
-date: 2017-07-16 23:00:20 +0800
+date: 2017-07-16 23:13:02 +0800
 categories: web
 ---
 
 
-<div id="main" style="width: 600px;height:400px;"></div>
+<div id="main" style="width: 100%;height: 60%;"></div>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
         var myChart = echarts.init(document.getElementById('main'));
@@ -28,18 +28,18 @@ var refresh=window.setInterval(function(){
 
   	        var option = {
             title: {
-                text: 'ECharts 入门示例'
+                text: '微博实时 top10 关键字(最近一周)'
             },
             tooltip: {},
             legend: {
-                data:['销量']
+                data:['热度']
             },
             xAxis: {
                 data: xdata
             },
             yAxis: {},
             series: [{
-                name: '销量',
+                name: '热度',
                 type: 'bar',
                 data: ydata
             }]
