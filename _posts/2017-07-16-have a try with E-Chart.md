@@ -1,12 +1,12 @@
 ---
 layout: post
 title: have a try with E-Chart
-date: 2017-07-16 23:19:24 +0800
+date: 2017-07-16 23:22:03 +0800
 categories: web
 ---
 
 
-<div id="main" style="width: 100%;height: 100%;"></div>
+<div id="main" style="width:100%"></div>
 <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
         var myChart = echarts.init(document.getElementById('main'));
@@ -48,7 +48,7 @@ var refresh=window.setInterval(function(){
 	myChart.setOption(option);
 
 	})	
-},3000);        
+},300000);        
 
 
 </script>
