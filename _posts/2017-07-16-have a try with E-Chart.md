@@ -1,7 +1,7 @@
 ---
 layout: post
 title: have a try with E-Chart
-date: 2017-07-16 23:40:09 +0800
+date: 2017-07-16 23:42:26 +0800
 categories: web
 ---
 
@@ -40,7 +40,7 @@ $.getJSON('https://dev.genghuiluo.cn/feed/weibo/realtimehot.json', function(data
                     }  
                 },
 				axisLabel: {
-				     interval：0, //横轴信息全部显示
+				     interval: 0, //横轴信息全部显示
 				     rotate: 60,//60度角倾斜显示
 				  formatter:function(val){
 				     return val.split("").join("\n"); //横轴信息文字竖直显示
