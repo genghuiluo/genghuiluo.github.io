@@ -1,21 +1,18 @@
 ---
 layout: post
 title: have a try with E-Chart
-date: 2017-07-16 23:25:11 +0800
+date: 2017-07-16 23:27:46 +0800
 categories: web
 ---
 
 
 <div id="main" style="width: 100%; min-height: 400px"></div>
 <script type="text/javascript">
-        // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('main'));
-        
-       
-var refresh=window.setInterval(function(){
-  // call your function here
-	//location.reload();
-	$.getJSON('https://dev.genghuiluo.cn/feed/weibo/realtimehot.json', function(data){
+// 基于准备好的dom，初始化echarts实例
+var myChart = echarts.init(document.getElementById('main'));
+
+function updateChart() {
+$.getJSON('https://dev.genghuiluo.cn/feed/weibo/realtimehot.json', function(data){
 
 
 		var xdata = [];
@@ -47,8 +44,16 @@ var refresh=window.setInterval(function(){
   
 	myChart.setOption(option);
 
-	})	
-},300000);        
+	})
+}
 
+$(document).ready(function() {
+    updateChart();
+});
+
+var refresh=window.setInterval(function(){
+  // call your function here
+    updateChart();	
+},300000);        
 
 </script>
