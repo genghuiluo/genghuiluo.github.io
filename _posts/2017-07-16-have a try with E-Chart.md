@@ -1,7 +1,7 @@
 ---
 layout: post
 title: have a try with E-Chart
-date: 2017-07-16 23:52:20 +0800
+date: 2017-07-16 23:53:56 +0800
 categories: web
 ---
 
@@ -35,6 +35,9 @@ $.getJSON('https://dev.genghuiluo.cn/feed/weibo/realtimehot.json', function(data
             legend: {
                 data:['热度']
             },
+            grid: {
+                y2: 140
+            },
             xAxis: {
                 data: xdata,
 				axisLine:{  
@@ -45,6 +48,7 @@ $.getJSON('https://dev.genghuiluo.cn/feed/weibo/realtimehot.json', function(data
                 },
 				axisLabel: {
 				     interval: 0, //横轴信息全部显示
+                     rotate: -30,
                 }
             },
             yAxis: {
