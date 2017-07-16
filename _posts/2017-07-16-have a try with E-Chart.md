@@ -1,7 +1,7 @@
 ---
 layout: post
 title: have a try with E-Chart
-date: 2017-07-16 22:31:47 +0800
+date: 2017-07-16 22:54:53 +0800
 categories: web
 ---
 
@@ -18,6 +18,7 @@ var refresh=window.setInterval(function(){
 	$.getJSON('https://dev.genghuiluo.cn/feed/weibo/realtimehot.json', function(data){
 		$.each( data, function( key, val ) {
 			alert(val.key_text)	
+        });
 	})	
 },3000);        
 
