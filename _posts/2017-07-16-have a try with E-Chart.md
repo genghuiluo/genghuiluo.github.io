@@ -1,7 +1,7 @@
 ---
 layout: post
 title: have a try with E-Chart
-date: 2017-07-16 20:59:46 +0800
+date: 2017-07-16 22:31:47 +0800
 categories: web
 ---
 
@@ -11,12 +11,15 @@ categories: web
         // 基于准备好的dom，初始化echarts实例
         var myChart = echarts.init(document.getElementById('main'));
         
-        var refresh=window.setInterval(function(){
-            $.getJSON('http://dev.genghuiluo.cn:1235/weibo/realtimehot.json', function(data){
-                        $.each( data, function( key, val ) {
-                            alert(val.key_text)
-                        });
-            })
-        },10000);
+       
+var refresh=window.setInterval(function(){
+  // call your function here
+	//location.reload();
+	$.getJSON('https://dev.genghuiluo.cn/feed/weibo/realtimehot.json', function(data){
+		$.each( data, function( key, val ) {
+			alert(val.key_text)	
+	})	
+},3000);        
+
 
 </script>
