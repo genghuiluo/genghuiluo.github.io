@@ -1,7 +1,7 @@
 ---
 layout: post
 title: have a try with E-Chart
-date: 2017-07-16 23:27:46 +0800
+date: 2017-07-16 23:31:35 +0800
 categories: web
 ---
 
@@ -32,13 +32,31 @@ $.getJSON('https://dev.genghuiluo.cn/feed/weibo/realtimehot.json', function(data
                 data:['热度']
             },
             xAxis: {
-                data: xdata
+                data: xdata,
+				axisLine:{  
+                    lineStyle:{  
+                        color:'yellow',  
+                        width:2  
+                    }  
+                },
+				axisLabel: {
+				     interval：0，//横轴信息全部显示
+				     rotate: 60,//60度角倾斜显示
+				  formatter:function(val){
+				     return val.split("").join("\n"); //横轴信息文字竖直显示
+				} 
             },
             yAxis: {},
             series: [{
                 name: '热度',
                 type: 'bar',
-                data: ydata
+                data: ydata,
+				axisLine:{  
+                    lineStyle:{  
+                        color:'yellow',  
+                        width:2  
+                    }  
+                } 
             }]
         };
   
