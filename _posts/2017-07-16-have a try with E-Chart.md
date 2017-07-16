@@ -1,7 +1,7 @@
 ---
 layout: post
 title: have a try with E-Chart
-date: 2017-07-16 23:46:52 +0800
+date: 2017-07-16 23:50:52 +0800
 categories: web
 ---
 
@@ -25,11 +25,11 @@ $.getJSON('https://dev.genghuiluo.cn/feed/weibo/realtimehot.json', function(data
 
   	        var option = {
             title: {
-                text: '微博实时 top10 关键字(最近一周)'
+                text: '微博实时 top10 关键字(最近一周)',
 				textStyle: {  
         			fontWeight: 'normal',              //标题颜色  
         			color: 'white'  
-    			}, 
+    			} 
             },
             tooltip: {},
             legend: {
