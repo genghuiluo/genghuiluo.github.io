@@ -1,7 +1,7 @@
 ---
 layout: post
 title: start Docker on win10
-date: 2017-07-19 11:15:04 +0800
+date: 2017-07-19 17:11:19 +0800
 categories: docker
 ---
 
@@ -44,31 +44,18 @@ This is free software; you are free to change and redistribute it.
 There is NO WARRANTY, to the extent permitted by law.
 root@0e9cba9b9e1f:/# ll
 ll
-total 72
-drwxr-xr-x   1 root root 4096 Jun 29 06:49 ./
-drwxr-xr-x   1 root root 4096 Jun 29 06:49 ../
--rwxr-xr-x   1 root root    0 Jun 29 06:49 .dockerenv*
-drwxr-xr-x   2 root root 4096 Jun 19 20:24 bin/
-drwxr-xr-x   2 root root 4096 Apr 12  2016 boot/
-drwxr-xr-x   5 root root  360 Jun 29 06:49 dev/
-drwxr-xr-x   1 root root 4096 Jun 29 06:49 etc/
-drwxr-xr-x   2 root root 4096 Apr 12  2016 home/
-drwxr-xr-x   8 root root 4096 Sep 13  2015 lib/
-drwxr-xr-x   2 root root 4096 Jun 19 20:23 lib64/
-drwxr-xr-x   2 root root 4096 Jun 19 20:23 media/
-drwxr-xr-x   2 root root 4096 Jun 19 20:23 mnt/
-drwxr-xr-x   2 root root 4096 Jun 19 20:23 opt/
-dr-xr-xr-x 118 root root    0 Jun 29 06:49 proc/
-drwx------   2 root root 4096 Jun 19 20:24 root/
-drwxr-xr-x   1 root root 4096 Jun 20 23:19 run/
-drwxr-xr-x   1 root root 4096 Jun 20 23:18 sbin/
-drwxr-xr-x   2 root root 4096 Jun 19 20:23 srv/
-dr-xr-xr-x  13 root root    0 Jun 29 06:49 sys/
-drwxrwxrwt   2 root root 4096 Jun 19 20:24 tmp/
-drwxr-xr-x   1 root root 4096 Jun 20 23:18 usr/
-drwxr-xr-x   1 root root 4096 Jun 20 23:18 var/
+rwxr-xr-x   1 root root 4096 Jun 20 23:18 var/
 ```
 
 Copying files from host to Docker container
 
 <img src="{{ site.url }}/assets/docker_win10_3.jpg" style="width:80%" />
+
+### connect to oracle instance inside docker
+`docker run -it --shm-size 2g -m 4g --memory-swap 8g --expose 1521 -p 1521:1521 --hostname oracle genghuiluo/rhel7:oracle_11g_r2 /bin/bash`
+
+```
+Listening Endpoints Summary...
+  (DESCRIPTION=(ADDRESS=(PROTOCOL=ipc)(KEY=EXTPROC1521)))
+  (DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=oracle)(PORT=1521)))
+```

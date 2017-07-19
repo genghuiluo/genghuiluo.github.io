@@ -1,7 +1,7 @@
 ---
 layout: post
 title: start Docker on ubuntu
-date: 2017-06-29 14:13:06 +0800
+date: 2017-07-19 17:09:57 +0800
 categories: docker
 ---
 
@@ -29,8 +29,6 @@ docker push username/repository:tag            # Upload tagged image to registry
 docker run username/repository:tag                   # Run image from a registry
 ```
 
-
-
 > How to copy docker images from one host to another without via repository?
 
 You will need to save the docker image as a tar file:
@@ -38,3 +36,5 @@ You will need to save the docker image as a tar file:
 Then copy your image to a new system with regular file transfer tools such as cp or scp. After that you will have to load the image into docker:
 `docker load -i <path to image tar file>`
 
+`docker rmi <your_name>/<image_name>:<tag>` remove a tag
+`docker rmi <image_id>` remove a image
