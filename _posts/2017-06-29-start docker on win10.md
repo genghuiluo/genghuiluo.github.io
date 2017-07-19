@@ -1,7 +1,7 @@
 ---
 layout: post
 title: start Docker on win10
-date: 2017-06-29 14:57:39 +0800
+date: 2017-07-19 11:15:04 +0800
 categories: docker
 ---
 
@@ -69,3 +69,6 @@ drwxr-xr-x   1 root root 4096 Jun 20 23:18 usr/
 drwxr-xr-x   1 root root 4096 Jun 20 23:18 var/
 ```
 
+Copying files from host to Docker container
+
+<img src="{{ site.url }}/assets/docker_win10_3.jpg" style="width:80%" />
