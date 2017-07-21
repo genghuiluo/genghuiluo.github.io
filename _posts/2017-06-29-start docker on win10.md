@@ -1,7 +1,7 @@
 ---
 layout: post
 title: start Docker on win10
-date: 2017-07-19 17:11:19 +0800
+date: 2017-07-21 11:13:29 +0800
 categories: docker
 ---
 
@@ -58,4 +58,9 @@ Copying files from host to Docker container
 Listening Endpoints Summary...
   (DESCRIPTION=(ADDRESS=(PROTOCOL=ipc)(KEY=EXTPROC1521)))
   (DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=oracle)(PORT=1521)))
+```
+
+enable docker in Cygwin
+```
+ln /cygdrive/c/Program\ Files/Docker/Docker/resources/bin/docker.exe /usr/bin/docker
 ```
