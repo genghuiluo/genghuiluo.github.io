@@ -1,7 +1,7 @@
 ---
 layout: post
 title: have a try with E-Chart
-date: 2017-07-28 10:01:09 +0800
+date: 2017-07-28 10:02:30 +0800
 categories: web
 ---
 
@@ -76,7 +76,7 @@ $.getJSON('https://dev.genghuiluo.cn/feed/weibo/realtimehot.json', function(data
                         label: {
                             show: true,
                             position: 'top',
-                            formatter: '{b}\n{c}'
+                            formatter: '{c}\n'
                         }
                     }
                 },
