@@ -1,7 +1,7 @@
 ---
 layout: post
 title: have a try with E-Chart
-date: 2017-07-28 09:21:28 +0800
+date: 2017-07-28 09:31:22 +0800
 categories: web
 ---
 
@@ -32,9 +32,6 @@ $.getJSON('https://dev.genghuiluo.cn/feed/weibo/realtimehot.json', function(data
     			} 
             },
             tooltip: {},
-            legend: {
-                data:['热度']
-            },
             grid: {
                 y2: 140
             },
@@ -83,7 +80,7 @@ $.getJSON('https://dev.genghuiluo.cn/feed/weibo/realtimehot.json', function(data
                     }
                 },
 　　　　　　　　//设置柱的宽度，要是数据太少，柱子太宽不美观~
-　　　　　　　　barWidth:70,
+　　　　　　　　barWidth: 50,
                 data: ydata,
             }]
         };
