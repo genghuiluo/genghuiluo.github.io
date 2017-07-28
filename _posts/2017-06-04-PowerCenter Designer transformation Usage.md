@@ -1,10 +1,10 @@
 ---
 layout: post
 title: PowerCenter Designer Transformations Usage
-date: 2017-06-04 16:48:26 +0800
+date: 2017-07-28 17:20:18 +0800
 categories: ETL
 ---
-## Source Qualifier
+### Source Qualifier
 
 - Source Qualifier有下列用途(DB Relational Source)： A. 连接同源的数据集； B. 过滤源数据； C. 指定连接条件（等连，非等连，like）和类型（内连，外连）； D. 指定排序栏位（当Mapping 中用到Aggregator 或者Joiner 时，排序可以改进 性能）； E. Distinct； F. Override Select；
 - Source Qualifier 执行从数据库数据类型到Powercenter 数据类型间的转换；
@@ -15,7 +15,7 @@ categories: ETL
 - 一切检索的内容都是以SQL Query 最高优先级，如果没有sql query 就找 User Join Define 和filter,如果有SQL Query 那么SQ 拉出的端口必须与SQL Query 的Select 个数一样多, sql query 多表时,select 到的field 的table 的Source 是一 定需带上的,当需要多个schema 作为源的话,则一定需要sql querry
 - Pre SQL 和Post SQL 在seesion 执行前或者结束时会触发。比如可以把session 执行 的时间写入到某些地方，获取执行电脑的ip 地址等用处.
 
-## Update Strategy
+### Update Strategy
 
 - Powercenter 的更新策略包括两个方面： 
     - A. 在Mapping 中：用Update Strategy Transformation 标识行为Insert，Update， Delete 或者Reject
@@ -23,12 +23,12 @@ categories: ETL
 - 在Update Strategy Expression 中可以输入常量（DD_INSERT， DD_UPDATE， DD_DELETE， DD_REJECT）或者数字值 （0，1，2，3），其它数字值被解析为0，可以用IIF 或者DECODE 函数构建逻辑表达式来区别每一行的更新策略；
 - Forward Rejected Rows：勾选时被Rejected 的行会存入对应Target 配置的Reject文件中去，不选时，可能会写入Session Log中去，根椐当前Transformation 的Tracing Level 的属性来决定；如果在会话属性中配置了出错行日志属性，则不会生成Reject 文件；
 
-## Expression
+### Expression
 
 - 用来执行单行计算，在计算表达式中（丰富的函数库），可以使用输入端口，输入/输出端口，可以使用 函数以及非连接的Lookup，也可以使用变量端口；
 - 数据来源只能一个（单行计算）
 
-## Lookup
+### Lookup
 
 > lookup is the most complicate transformation in my mind, [view more]({{ site.url }}/etl/2017/05/22/dynamic-lookup.html)
 
@@ -59,7 +59,7 @@ categories: ETL
     - 理解Associated Port 的意义；关联端口,当Dynamic Look Up Cache 时,PM 如何把in port的资料和cache 里面的资料来对比和关联，然后产生新的cache 和NewLookUpRow就是需要用Associated Port来关联in port端口的资料或者Sequrence了。Condition 相关的Fields端口会被自动关联.只有有连线出去的port 的比较才有意义.也就是说如果没有连线出去，两个值尽管不相等，NewLookUpRow 还是为0.而且Null=Null 
     - Ignore in Comparison 可以不去比较的栏位(但是至少要有一个,要不Look Up 会失败),如果适当使用可以提高性能。 忽略比较,当这个值之外所有比较值都相同则不更新Cache,,NewLookUpRow=0 当其它比较值还有不相同时则更新Cache. NewLookUpRow=,1 or 2 15. Output Old Value On Update:当更新的时候不会更新新值到Cache,全部以Cache 里面的值输出
 
-## Aggregator
+### Aggregator
 
 - Aggregator 可用于聚合统计，和SQL语句不同的是，可以针对不同的计算指定不同的条件，并可输出非Group By 的栏位；
 - 用于Group By 的端口可以是输入的， 输入输出的，输出的或者变量端口，用到的输出及变量端口中不能含有统计函数；
@@ -68,7 +68,7 @@ categories: ETL
 - Sorted Input 属性表示输入的数据已经按Group By端口的要求排好了顺序，这样能提高性能，输入部分数据就能有部分结果，源和目标的组件能同时工作，在没有选这个属性的情况下，需要等到所有数据输入完成才能开始有统计结果；注意：当选择Sorted Input 属性，但是输入数据未排序时。Session 将failed。当aggregate expression 包含嵌套aggregate functions 或者采用incremental aggregation 或者Treat source rows as 是data driven 时，不能用Sorted Input属性。
 - 在上面属性未选的情况下，需要用到索引CACHE和数据CACHE
 
-## Filter
+### Filter
 
 - Filter 用来过滤数据，被过滤掉的数据不会写入Session Log，也不会写入Reject File；
 - 将Filter 尽可能地靠近Source 可以提升性能；
@@ -77,7 +77,7 @@ categories: ETL
 - 只有Filter Condition 评估为真（或者非零数值）的记录才能通过；
 - 如果有可能，用Source Qualifier 代替Filter 可以取得更好的性能。
      
-## Joiner
+### Joiner
 
 > joiner is a complicate transformation, [view more]()
 
@@ -101,7 +101,7 @@ categories: ETL
 11. 在不同的配置条件下，Joiner有不同的阻塞策略，这样可以用更少的Cache，对性能有不同的影响； 
 12. 在有可能的情况下，尽可能在数据库完成连接处理；
 
-## Normalizer
+### Normalizer
         
 > normalizer is a complicate transformation, [view more]()
 
@@ -110,7 +110,7 @@ categories: ETL
 3. Generated Column ID，自动产生不能删除的端口，命名为GCID\_， 这个端口产生一个序号指名当前输出来自多个输入中的哪一个； 
 4. Reset和Restart 属性：会话结束时重置GK 值到上次的值或者到1；
 
-## Router
+### Router
 
 - Router 和Filter 很相似，Router 可以用一或多个Filter 来取代，不同的是用Router 来生成多个组时输入数据只需处理一次，所以效率更高；
 - Router 由一个输入组，一到多个用户定义的输出组和一个默认组组成，每一个用户定 义的输出组含一个测试条件，满足条件的输入数据会进入相应的用户定义组，不满足所 有用户定义条件的数据会进入默认组；
@@ -119,7 +119,7 @@ categories: ETL
 - 如果某一行符合多个输出组的评估条件，则出现在多个组的输出数据流中；
 - 可以将一个输出组的端口连到多个Transformation 或者Target 上，但不能将多个输出 组的端口连到一个Transformation 或者Target 上；
 
-## Sequence
+### Sequence
 
 - Sequence 用来产生序列号用以作为主键栏位，可以重用；
 - 只有两个输出端口：Nextval 和Currval；
@@ -129,20 +129,20 @@ categories: ETL
 - 不重用的Sequence 有Reset 属性，启用以后，在每个会话结束时会将Current Value 置为会话开始时的值，这个值是它产生的第一个值；
 - 当Sequence 配置成重用时，应该给Number of Cached Values 一个大于零的缓存值， 这个值是主要为保证不出现重复数据而设置的.比如当设置为100,那么一个线程在从1 开始在跑,则另外一个线程会从101 开始.每次跑完都要补足100 整数.
 
-## Sorter
+### Sorter
 
 - Sorter 用来排序数据，可以指定多个排序端口，每个端口可以指定升降序，字符串比较时可以忽略大小写，还可以用Distinct 选项来消除重复(所有端口,包括没有指定排序的端口)；
 - 排序时会用到输入数据两倍大小或者更大的空间，默认的排序Cache是8M，可选的排序Cache 范围是1M 到4G，排序Cache不够时，服务器会将数据临时存储在排序目录，如果指定的排序Cache 无法满足，会话会失败，可以用文档中提到公式计算Cache(?)；
 - 当配置使用 Distinct 属性时，所有的端口都会用于排序；
 - 默认情况下，NULL 大于任何值，可以配置NULL 值小于任何值；
 
-## Union
+### Union
 
 - Union 可以将多个数据流合并成一个数据流，功能类似于SQL 中的UNION ALL；
 - Union 可以有多个输入组，只有一个输出组，输入组和输出组有一一对应的端口；
 - Ports 页不可编辑，只能编辑Groups 和 Group Tabs 页；
 
-## Rank
+### Rank
 
 - Rank 可以用来返回根椐某个端口排序的最大或者最小的N条记录，并且可以指定分组； 可以用于得到去除的重复资料(比如5 条相同数据，只取了一条，那么另外四条可以由 这个加上Sqerence 组合得到其它四条.).
 - Rank 中可以使用分组，但并不能使用分组函数(?)，可以指定多个分组端口，但用于排序的Rank 端口不可用于分组；
