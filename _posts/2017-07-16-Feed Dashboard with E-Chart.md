@@ -1,7 +1,7 @@
 ---
 layout: post
-title: have a try with E-Chart
-date: 2017-07-28 10:02:30 +0800
+title: Feed Dashboard with ECharts
+date: 2017-07-28 10:05:52 +0800
 categories: web
 ---
 
