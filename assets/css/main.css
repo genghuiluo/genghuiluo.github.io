@@ -4,7 +4,7 @@ html {
     font-family: 'Open Sans', sans-serif;
     background-color: Black; 
     /* color: White; */
-    color: #3cba54;
+    color: #db3236;
     /* Perfect Full Page Background Image
      * css-tricks https://css-tricks.com/perfect-full-page-background-image/
      */
@@ -32,7 +32,7 @@ a.site-title {
 }
 
 .site-title {
-    color: #db3236;
+    color: White;
     font-family: 'Josefin Slab', serif;
 }
 
@@ -52,7 +52,7 @@ i {
 
 /* post tile */
 h2 {
-    color: White;
+    color: #3cba54;
     font-family: 'Ubuntu', sans-serif;
 }
 
