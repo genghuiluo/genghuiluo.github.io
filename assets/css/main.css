@@ -2,21 +2,22 @@ html {
     /*font-family: 'PT Sans', sans-serif;
     background-color: #ffffff;*/
     font-family: 'Open Sans', sans-serif;
-    background-color: Black; 
-    /* color: White; */
-    color: #db3236;
+    background-color: white; 
+    color: black;
     /* Perfect Full Page Background Image
      * css-tricks https://css-tricks.com/perfect-full-page-background-image/
-     */
+    
     background: url(../bg_smartisanUpro.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+     
+    */
 }
 
 a {
-    color: White;
+    color: CornflowerBlue;
 }
 
 code {
@@ -32,7 +33,7 @@ a.site-title {
 }
 
 .site-title {
-    color: White;
+    color: black;
     font-family: 'Josefin Slab', serif;
 }
 
@@ -41,25 +42,10 @@ a.navigation-item {
 }
 
 .navigation-item {
-    color: #4885ed;
-    border-bottom: 2px solid #f4c20d;
+    color: black;
+    border-bottom: 2px solid darkslateblue;
 }
 
-/* categories */
-i {
-    color: #4885ed;
-}
-
-/* post tile */
-h2 {
-    color: #3cba54;
-    font-family: 'Ubuntu', sans-serif;
-}
-
-/* sub tile in a post */
-h3 {
-    color: #4885ed;
-}
 
 .highlight {
     background-color: Black !important; /* important for no overwrite */
@@ -68,6 +54,6 @@ h3 {
 /* hr, delimeted line between categories */
 .line{
   border: 0;
-  background-color: #f4c20d;
+  background-color: grey;
   height: 1px;
 }

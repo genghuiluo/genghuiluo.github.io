@@ -19,7 +19,7 @@ layout: default
 		</b>
                 </div>
                 <div class="col col-2 left-align pr1">
-                    <span>{{ post.categories }}</span>
+                    <i>{{ post.categories }}</i>
                 </div>
                 <div class="col col-2 right-align pl1">
                     <span>{{ post.date | date: '%d %b, %Y' }}</span>
