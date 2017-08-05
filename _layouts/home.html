@@ -11,18 +11,14 @@ layout: default
         {% for post in sorted_posts %}
         <li>
             <div class="clearfix">
+                <div class="col col-3 left-align pr1">
+                    <span>{{ post.date | date: '%Y-%m-%d %H:%M:%S, %a' }}</span>
+                </div>
                 <div class="col col-8 left-align pr1">
-		<b>
-                    <a href="{{ post.url | relative_url }}">
-                        {{ post.title }}
-                    </a>
-		</b>
+                    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
                 </div>
-                <div class="col col-2 left-align pr1">
+                <div class="col col-1 right-align pl1">
                     <span>{{ post.categories }}</span>
-                </div>
-                <div class="col col-2 right-align pl1">
-                    <span>{{ post.date | date: '%d %b, %Y' }}</span>
                 </div>
             </div>
         </li>
