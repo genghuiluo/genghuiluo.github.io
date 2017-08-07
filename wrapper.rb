@@ -152,6 +152,20 @@ def hygiene_timestamp
     end
 end
 
+def hygiene_filename
+    Dir.glob("./_posts/*").each do |p|
+        File.open(p, "r").each_line do |l|
+            if match = l.match(/title:\ (.*)/)
+                title = match.captures.first
+                filename_pre,filename_tail = p.match(/(.*\d{4}\-\d{2}\-\d{2}-).*(\.md)/).captures
+                File.rename p, "#{filename_pre}#{title.gsub(/[\ \/]/,"_")}#{filename_tail}"
+                break
+            end
+        end
+    end
+end
+
+
 # read params
 if ARGV.size == 0
     usage
@@ -166,8 +180,9 @@ else
             debug
         when /\-[0-9]/
             recent((ARGV[0][1,ARGV[0].size]).to_i)
-        when "-h","--hygiene-timestamp"
+        when "-h","--hygiene"
             hygiene_timestamp
+            hygiene_filename
         when "-s","--search"
             search(ARGV[1])  
         when "-e","--edit"
