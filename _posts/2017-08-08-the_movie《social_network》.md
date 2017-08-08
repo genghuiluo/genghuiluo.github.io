@@ -1,7 +1,7 @@
 ---
 layout: post
-title: 《social network》, the movie
-date: 2017-02-23 17:19:22 +0800
+title: the movie《social network》
+date: 2017-08-08 15:29:39 +0800
 categories: algorithm
 ---
 ### crawl girls picture
@@ -60,4 +60,4 @@ Sa is the point which A get in this match,K is the constant factor depend on the
 *For example, every one’s ranking is 0 at beginning. In the first match, A win B, A got 1 and B got 0.*
 
 - Ra’=0+16\*(1-0.5)=8
-- Rb’=0+16(0-0.5)=-8
+- Rb’=0+16\*(0-0.5)=-8
