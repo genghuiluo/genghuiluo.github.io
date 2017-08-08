@@ -1,7 +1,7 @@
 ---
 layout: post
-title: general transformations intro
-date: 2017-08-08 13:47:50 +0800
+title: informatica general transformations
+date: 2017-08-08 15:39:49 +0800
 categories: ETL
 ---
 ### Source Qualifier
@@ -30,7 +30,7 @@ categories: ETL
 
 ### Lookup
 
-> lookup is the most complicate transformation in my mind, [view more]({{ site.url }}/etl/2017/05/22/dynamic-lookup.html)
+> lookup is the most complicate transformation in my mind, [view more]({{ site.url }}/etl/2017/05/22/informatica_transformation_-_dynamic_lookup.html)
 
 1. Lookup 根椐输入值从数据库或者平面文件中查找数据； 
 2. Lookup 分为连接型和非连接型的： 
@@ -79,7 +79,7 @@ categories: ETL
      
 ### Joiner
 
-> joiner is a complicate transformation, [view more]()
+> joiner is a complicate transformation, [view more]({{ site.url }}/etl/2017/05/22/informatica_transformation_-_joiner.html)
 
 1. Joiner 可以用来连接两个相关的不同来源的数据集； 
 2. 至少需要指定一个匹配端口； 
