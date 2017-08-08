@@ -1,7 +1,7 @@
 ---
 layout: post
-title: PowerCenter Designer Transformations Usage
-date: 2017-07-28 17:20:18 +0800
+title: general transformations intro
+date: 2017-08-08 13:47:50 +0800
 categories: ETL
 ---
 ### Source Qualifier
