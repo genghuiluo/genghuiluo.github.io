@@ -1,6 +1,6 @@
 ---
 layout: post
-title: RehHat\RHEL\CentOS millescious
+title: RehHat RHEL CentOS millescious
 date: 2017-07-19 16:45:23 +0800
 categories: linux
 ---
