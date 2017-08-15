@@ -39,8 +39,8 @@ e.g.
 #6 edit, work with list/search 
 #{$0} -e/--edit <seq_in_list/search_output> [--gedit] # use vim by default
 
-#7 hygiene timestamp of posts
-#{$0} -h/--hygiene-timestamp
+#7 hygiene filename/timestamp of posts
+#{$0} -h/--hygiene
     EOF
 end
 
