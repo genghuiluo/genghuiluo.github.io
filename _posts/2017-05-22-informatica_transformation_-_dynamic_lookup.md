@@ -1,8 +1,8 @@
 ---
 layout: post
 title: informatica transformation - dynamic lookup
-date: 2017-05-22 18:32:57 +0800
-categories: ETL
+date: 2017-08-19 13:08:26 +0800
+categories: etl
 ---
 
 > if row_count of table/file which you lookup > 1 million, I suggest you to  use joiner instead of lookup.

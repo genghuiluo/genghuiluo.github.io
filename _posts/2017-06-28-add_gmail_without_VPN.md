@@ -1,8 +1,8 @@
 ---
 layout: post
 title: add gmail without VPN
-date: 2017-06-28 11:49:28 +0800
-categories: lifecycle
+date: 2017-08-19 13:01:32 +0800
+categories: z
 ---
 **no vpn required**
 > google考虑到双重验证阻碍了app的使用，所以如下：

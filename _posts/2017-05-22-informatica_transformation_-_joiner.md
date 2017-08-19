@@ -1,8 +1,8 @@
 ---
 layout: post
 title: informatica transformation - joiner
-date: 2017-05-22 18:57:10 +0800
-categories: ETL
+date: 2017-08-19 13:08:13 +0800
+categories: etl
 ---
 
 ### 4 Join Types

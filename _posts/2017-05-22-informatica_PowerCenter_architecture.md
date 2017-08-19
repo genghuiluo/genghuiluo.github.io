@@ -1,8 +1,8 @@
 ---
 layout: post
 title: informatica PowerCenter architecture
-date: 2017-05-22 17:34:08 +0800
-categories: ETL 
+date: 2017-08-19 13:08:37 +0800
+categories: etl
 ---
 
 > Informatica PowerCenter is client-server architecture(官方的说法是SOA(Service Oriented Architecture, 面向服务架构),包含以下几个部分：

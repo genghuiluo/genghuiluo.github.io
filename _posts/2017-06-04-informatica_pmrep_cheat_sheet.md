@@ -1,8 +1,8 @@
 ---
 layout: post
 title: informatica pmrep cheat sheet
-date: 2017-06-04 16:42:28 +0800
-categories: ETL
+date: 2017-08-19 13:08:04 +0800
+categories: etl
 ---
 
 my usage script [export_infa.sh](https://github.com/genghuiluo/CSCS-Team-DB/blob/master/export_infa.sh)

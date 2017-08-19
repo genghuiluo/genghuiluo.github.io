@@ -1,8 +1,8 @@
 ---
 layout: post
 title: open source ETL tool - kettle
-date: 2017-07-12 10:52:48 +0800
-categories: ETL
+date: 2017-08-19 13:09:03 +0800
+categories: etl
 ---
 
 

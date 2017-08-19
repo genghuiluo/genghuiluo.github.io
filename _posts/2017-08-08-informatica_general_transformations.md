@@ -1,8 +1,8 @@
 ---
 layout: post
 title: informatica general transformations
-date: 2017-08-08 15:39:49 +0800
-categories: ETL
+date: 2017-08-19 13:07:55 +0800
+categories: etl
 ---
 ### Source Qualifier
 
