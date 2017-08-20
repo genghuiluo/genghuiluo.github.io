@@ -1,7 +1,7 @@
 ---
 layout: post
-title: ping usage
-date: 2017-02-23 17:19:22 +0800
+title: 学会使用Linux下的ping
+date: 2017-08-20 13:39:55 +0800
 categories: linux
 ---
 > ping命令是常用的网络命令，它通常用来测试与目标主机的连通性，我们经常会说“ping一下某机器，看是不是开着”、不能打开网页时会说“你先ping网关地址192.168.1.1试试”。
@@ -20,8 +20,9 @@ ping 命令每秒发送一个数据报并且为每个接收到的响应打印一
 
 ### 参数：
 
+    -b 允许ping一个广播地址 
     -d 使用Socket的SO_DEBUG功能。
-    -f  极限检测。大量且快速地送网络封包给一台机器，看它的回应。
+    -f 极限检测。大量且快速地送网络封包给一台机器，看它的回应。
     -n 只输出数值。
     -q 不显示任何传送封包的信息，只显示最后的结果。
     -r 忽略普通的Routing Table，直接将数据包送到远端主机上。通常是查看本机的网络接口是否有问题。
@@ -37,7 +38,7 @@ ping 命令每秒发送一个数据报并且为每个接收到的响应打印一
 
 #### 实例：
 
-1. ping的通的情况
+1. ping 的通的情况
     ```
     [root@localhost ~]# ping 192.168.120.205
     PING 192.168.120.205 (192.168.120.205) 56(84) bytes of data.
@@ -52,7 +53,7 @@ ping 命令每秒发送一个数据报并且为每个接收到的响应打印一
     rtt min/avg/max/mdev = 0.181/0.293/0.720/0.214 ms
     [root@localhost ~]# 
     ```
-2. ping不通的情况
+2. ping 不通的情况
     ```
     [root@localhost ~]# ping 192.168.120.202
     PING 192.168.120.202 (192.168.120.202) 56(84) bytes of data.
@@ -67,7 +68,7 @@ ping 命令每秒发送一个数据报并且为每个接收到的响应打印一
     8 packets transmitted, 0 received, +6 errors, 100% packet loss, time 7005ms
     , pipe 4
     ```
-3. ping网关
+3. ping 网关
     ```
     [root@localhost ~]# route
     Kernel IP routing table
@@ -88,7 +89,7 @@ ping 命令每秒发送一个数据报并且为每个接收到的响应打印一
     5 packets transmitted, 5 received, 0% packet loss, time 4000ms
     rtt min/avg/max/mdev = 1.682/1.880/2.020/0.129 ms
     ```
-4. ping指定次数
+4. ping 指定次数
     ```
     [root@localhost ~]# ping -c 10 192.168.120.206
     PING 192.168.120.206 (192.168.120.206) 56(84) bytes of data.
@@ -107,7 +108,7 @@ ping 命令每秒发送一个数据报并且为每个接收到的响应打印一
     10 packets transmitted, 10 received, 0% packet loss, time 9000ms
     rtt min/avg/max/mdev = 0.242/0.367/1.251/0.295 ms
     ``` 
-5. 时间间隔和次数限制的ping
+5. 时间间隔和次数限制的 ping
     ```
     [root@localhost ~]# ping -c 10 -i 0.5 192.168.120.206
     PING 192.168.120.206 (192.168.120.206) 56(84) bytes of data.
@@ -142,7 +143,7 @@ ping 命令每秒发送一个数据报并且为每个接收到的响应打印一
     10 packets transmitted, 10 received, 0% packet loss, time 90ms
     rtt min/avg/max/mdev = 0.193/0.716/3.564/1.080 ms
     ```
-6. 通过域名ping公网上的站点
+6. 通过域名 ping 公网上的站点
     ```
     peida-VirtualBox ~ # ping -c 5 www.58.com
     PING www.58.com (211.151.111.30) 56(84) bytes of data.
