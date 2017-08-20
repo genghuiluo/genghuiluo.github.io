@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Feed Dashboard with ECharts
-date: 2017-08-20 14:46:09 +0800
+date: 2017-08-20 14:49:58 +0800
 categories: web
 ---
 
@@ -102,7 +102,7 @@ $.getJSON('https://dev.genghuiluo.cn/feed/weibo/realtimehot.json?day='+day, func
 $(document).ready(function() {
     updateChart(7,weibo_1w_chart,'微博实时 top10 关键字(最近1周)');
     updateChart(3,weibo_3d_chart,'微博实时 top10 关键字(最近3天)');
-    updateChart(1,weibo_3d_chart,'微博实时 top10 关键字(最近1天)');
+    updateChart(1,weibo_1d_chart,'微博实时 top10 关键字(最近1天)');
 });
 
 //refresh each 300s
