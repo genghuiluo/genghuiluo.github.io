@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Feed Dashboard with ECharts
-date: 2017-08-20 14:43:47 +0800
+date: 2017-08-20 14:46:09 +0800
 categories: web
 ---
 
@@ -17,7 +17,7 @@ categories: web
 // 基于准备好的dom，初始化echarts实例
 var weibo_1w_chart = echarts.init(document.getElementById('weibo_1w'));
 var weibo_3d_chart = echarts.init(document.getElementById('weibo_3d'));
-var weibo_3d_chart = echarts.init(document.getElementById('weibo_1d'));
+var weibo_1d_chart = echarts.init(document.getElementById('weibo_1d'));
 
 function updateChart(day,element,title) {
 $.getJSON('https://dev.genghuiluo.cn/feed/weibo/realtimehot.json?day='+day, function(data){
@@ -109,7 +109,7 @@ $(document).ready(function() {
 var refresh=window.setInterval(function(){
     updateChart(7,weibo_1w_chart,'微博实时 top10 关键字(最近1周)');
     updateChart(3,weibo_3d_chart,'微博实时 top10 关键字(最近3天)');
-    updateChart(1,weibo_3d_chart,'微博实时 top10 关键字(最近1天)');
+    updateChart(1,weibo_1d_chart,'微博实时 top10 关键字(最近1天)');
 },300000);        
 
 </script>
