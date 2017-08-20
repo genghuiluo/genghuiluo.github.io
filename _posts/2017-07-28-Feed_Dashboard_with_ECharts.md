@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Feed Dashboard with ECharts
-date: 2017-07-28 10:10:55 +0800
+date: 2017-08-20 13:53:17 +0800
 categories: web
 ---
 
@@ -32,7 +32,7 @@ $.getJSON('https://dev.genghuiluo.cn/feed/weibo/realtimehot.json', function(data
                 text: '微博实时 top10 关键字(最近一周)',
 				textStyle: {  
         			fontWeight: 'normal',              //标题颜色  
-        			color: 'white'  
+        			color: 'black'  
     			} 
             },
             tooltip: {},
@@ -43,7 +43,7 @@ $.getJSON('https://dev.genghuiluo.cn/feed/weibo/realtimehot.json', function(data
                 data: xdata,
 				axisLine:{  
                     lineStyle:{  
-                        color:'white',  
+                        color:'black',  
                         width: 2
                     }  
                 },
@@ -55,7 +55,7 @@ $.getJSON('https://dev.genghuiluo.cn/feed/weibo/realtimehot.json', function(data
             yAxis: {
             	axisLine:{  
                     lineStyle:{  
-                        color:'white',  
+                        color:'black',  
                         width: 2  
                     }  
                 },
