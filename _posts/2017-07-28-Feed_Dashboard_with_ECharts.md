@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Feed Dashboard with ECharts
-date: 2017-08-20 13:53:17 +0800
+date: 2017-08-20 14:09:17 +0800
 categories: web
 ---
 
@@ -10,13 +10,15 @@ categories: web
 [ECharts Legacy Doc](http://echarts.baidu.com/echarts2/doc/doc.html#简介)
 [ECharts @Github](https://github.com/ecomfe/echarts)
 
-<div id="main" style="width: 100%; min-height: 600px"></div>
+<div id="weibo_1w" style="width: 100%; min-height: 600px"></div>
+<div id="weibo_3d" style="width: 100%; min-height: 600px"></div>
 <script type="text/javascript">
 // 基于准备好的dom，初始化echarts实例
-var myChart = echarts.init(document.getElementById('main'));
+var weibo_1w_chart = echarts.init(document.getElementById('weibo_1w'));
+var weibo_3d_chart = echarts.init(document.getElementById('weibo_3d'));
 
-function updateChart() {
-$.getJSON('https://dev.genghuiluo.cn/feed/weibo/realtimehot.json', function(data){
+function updateChart(day,element,title) {
+$.getJSON('https://dev.genghuiluo.cn/feed/weibo/realtimehot.json?day='+day, function(data){
 
 
 		var xdata = [];
@@ -29,7 +31,7 @@ $.getJSON('https://dev.genghuiluo.cn/feed/weibo/realtimehot.json', function(data
 
   	        var option = {
             title: {
-                text: '微博实时 top10 关键字(最近一周)',
+                text: title,
 				textStyle: {  
         			fontWeight: 'normal',              //标题颜色  
         			color: 'black'  
@@ -90,13 +92,14 @@ $.getJSON('https://dev.genghuiluo.cn/feed/weibo/realtimehot.json', function(data
             }]
         };
   
-	myChart.setOption(option);
+	element.setOption(option);
 
 	})
 }
 
 $(document).ready(function() {
-    updateChart();
+    updateChart(7,weibo_1w_chart,'微博实时 top10 关键字(最近1周)');
+    updateChart(3,weibo_3d_chart,'微博实时 top10 关键字(最近3天)');
 });
 
 var refresh=window.setInterval(function(){
