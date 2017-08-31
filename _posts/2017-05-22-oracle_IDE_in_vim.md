@@ -2,7 +2,7 @@
 layout: post
 title: oracle IDE in vim
 date: 2017-05-22 14:55:47 +0800
-categories: oracle
+categories: database
 ---
 
 [Vorax, an Oracle IDE for Geeks](https://github.com/talek/vorax4), I spent a good amount of time to set up this Vim plugin on my desktop.

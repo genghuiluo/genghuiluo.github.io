@@ -2,7 +2,7 @@
 layout: post
 title: find teradata table usage from querylog
 date: 2017-02-28 09:50:32 +0800
-categories: teradata
+categories: database
 ---
 
 > shared by Jeff @clsfd

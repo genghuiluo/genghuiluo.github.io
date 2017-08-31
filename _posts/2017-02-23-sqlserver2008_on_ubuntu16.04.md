@@ -2,7 +2,7 @@
 layout: post
 title: sqlserver2008 on ubuntu16.04
 date: 2017-02-23 17:19:22 +0800
-categories: sqlserver
+categories: database
 ---
 Although [SQLServer on Linux is under development](http://www.microsoft.com/en-us/cloud-platform/sql-server-on-linux), limit to get.
 

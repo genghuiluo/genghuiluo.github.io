@@ -2,7 +2,7 @@
 layout: post
 title: 《收获_不止Oracle》_part1
 date: 2017-04-30 15:01:44 +0800
-categories: oracle
+categories: database
 ---
 
 物理体系

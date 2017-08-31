@@ -2,7 +2,7 @@
 layout: post
 title: Install Oracle 11g R2 on CentOS7 server (not desktop)
 date: 2017-05-22 16:07:20 +0800
-categories: oracle
+categories: database
 ---
 
 [Oracle 11g R2 Installation Guide](https://docs.oracle.com/cd/E11882_01/install.112/e47689/toc.htm)

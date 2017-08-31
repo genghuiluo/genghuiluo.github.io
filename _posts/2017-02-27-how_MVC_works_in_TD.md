@@ -2,7 +2,7 @@
 layout: post
 title: how MVC works in TD
 date: 2017-02-27 09:46:20 +0800
-categories: teradata
+categories: database
 ---
 
 > shared by Prakash Wilbert @eBay

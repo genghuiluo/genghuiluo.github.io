@@ -2,7 +2,7 @@
 layout: post
 title: sqlserver linux preview
 date: 2017-02-23 17:19:22 +0800
-categories: sqlserver
+categories: database
 ---
 [Install SQL Server on Ubuntu](https://docs.microsoft.com/zh-cn/sql/linux/sql-server-linux-setup-ubuntu)
 

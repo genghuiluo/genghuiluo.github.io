@@ -2,7 +2,7 @@
 layout: post
 title: dynamic SQL & SQL injection
 date: 2017-02-23 17:19:22 +0800
-categories: sqlserver
+categories: database
 ---
 > Microsoft SQL Server T-SQL example scripts which demonstrate the building and execution of powerful and flexible dynamic SQL queries. The dynamic SQL query is executed in a child process. 
 

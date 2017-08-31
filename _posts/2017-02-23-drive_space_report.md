@@ -2,7 +2,7 @@
 layout: post
 title: drive space report
 date: 2017-02-23 17:19:22 +0800
-categories: sqlserver
+categories: database
 ---
 For the drive space control report, you may have already identified these system resources and functions, but if not, these might simplify the process:
 

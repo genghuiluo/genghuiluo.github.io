@@ -2,7 +2,7 @@
 layout: post
 title: teradata compression guidelines
 date: 2017-02-28 09:46:30 +0800
-categories: teradata
+categories: database
 ---
 
 > shared by Coffing Publishing @eBay

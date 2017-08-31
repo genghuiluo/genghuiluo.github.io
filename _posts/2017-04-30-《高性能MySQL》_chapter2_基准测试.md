@@ -2,7 +2,7 @@
 layout: post
 title: 《高性能MySQL》_chapter2_基准测试
 date: 2017-04-30 15:02:28 +0800
-categories: mysql
+categories: database
 ---
 
 sysbench, a great MySQL benchmark testing tool

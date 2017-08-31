@@ -2,7 +2,7 @@
 layout: post
 title: TD cases of reducing CPU consumption
 date: 2017-02-28 10:39:04 +0800
-categories: teradata
+categories: database
 ---
 
 > shared by suichen @ebay

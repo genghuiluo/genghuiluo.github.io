@@ -2,7 +2,7 @@
 layout: post
 title: 《高性能MySQL》_chapter1_架构和历史
 date: 2017-05-22 18:30:58 +0800
-categories: mysql
+categories: database
 ---
 
 MySQL最重要，最与众不同的特性是它的存储引擎架构，这种设计将查询处理，系统任务和数据的存储/提取分离。

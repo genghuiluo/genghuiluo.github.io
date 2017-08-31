@@ -2,7 +2,7 @@
 layout: post
 title: start with PL/SQL 101
 date: 2017-07-27 16:47:49 +0800
-categories: oracle
+categories: database
 ---
 
 ### %TYPE, %ROWTYPE

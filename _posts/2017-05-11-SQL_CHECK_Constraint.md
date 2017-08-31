@@ -2,7 +2,7 @@
 layout: post
 title: SQL CHECK Constraint
 date: 2017-05-11 21:32:19 +0800
-categories: magic_sql
+categories: database
 ---
 
 > https://www.w3schools.com/sql/sql_check.asp

@@ -2,7 +2,7 @@
 layout: post
 title: teradata notes @clsfd
 date: 2017-03-04 18:31:27 +0800
-categories: teradata
+categories: database
 ---
 ## fastload
 ``` sql

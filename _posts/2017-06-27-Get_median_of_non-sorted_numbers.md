@@ -2,7 +2,7 @@
 layout: post
 title: Get median of non-sorted numbers
 date: 2017-06-27 20:52:57 +0800
-categories: magic_sql
+categories: database
 ---
 
 ### 1) Currently, the best answer in my mind..

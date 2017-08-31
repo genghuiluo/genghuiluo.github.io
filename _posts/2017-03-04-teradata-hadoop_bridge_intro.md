@@ -2,7 +2,7 @@
 layout: post
 title: teradata-hadoop bridge intro
 date: 2017-03-04 18:33:39 +0800
-categories: teradata
+categories: database
 ---
 
 > shared by ebay AIS ops

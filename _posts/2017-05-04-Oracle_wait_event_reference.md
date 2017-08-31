@@ -2,7 +2,7 @@
 layout: post
 title: Oracle wait event reference
 date: 2017-05-04 14:20:57 +0800
-categories: oracle
+categories: database
 ---
 
 ``` sql

@@ -2,7 +2,7 @@
 layout: post
 title: start with Oracle 101
 date: 2017-07-18 11:40:17 +0800
-categories: oracle
+categories: database
 ---
 
 ## server
