@@ -1,14 +1,9 @@
 ---
 layout: post
-title: Feed Dashboard with ECharts
+title: Weibo Hotkey Dashboard
 date: 2017-08-20 14:49:58 +0800
 categories: web
 ---
-
-[ECharts 3.0](http://echarts.baidu.com/)
-[ECharts 3.0 Doc](http://echarts.baidu.com/tutorial.html#5%20%E5%88%86%E9%92%9F%E4%B8%8A%E6%89%8B%20ECharts)
-[ECharts Legacy Doc](http://echarts.baidu.com/echarts2/doc/doc.html#简介)
-[ECharts @Github](https://github.com/ecomfe/echarts)
 
 <div id="weibo_1w" style="width: 100%; min-height: 600px"></div>
 <div id="weibo_3d" style="width: 100%; min-height: 600px"></div>
