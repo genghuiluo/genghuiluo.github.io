@@ -1,7 +1,8 @@
 html {
     /*font-family: 'PT Sans', sans-serif;
     background-color: #ffffff;*/
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Cabin Sketch', cursive;
+    /*font-family: 'Open Sans', sans-serif;*/
     background-color: white; 
     color: black;
     /* Perfect Full Page Background Image
@@ -19,25 +20,18 @@ a {
     text-decoration: none;
 }
 
-code {
-    font-family: 'Inconsolata', monospace;
-}
-
 pre { 
     white-space: pre; overflow: auto; 
 }
 
-a.site-title {
-    text-decoration: none;
-}
-
 .site-title {
     color: black;
-    font-family: 'Josefin Slab', serif;
+    font-family: 'Cabin Sketch', cursive;
+    font-size: 30px;
 }
 
-a.navigation-item {
-    text-decoration: none;
+a {
+    text-decoration: none; /* default: underline */
 }
 
 .navigation-item {
