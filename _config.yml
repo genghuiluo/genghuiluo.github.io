@@ -30,6 +30,8 @@ github_username:  jekyll
 theme: classic-jekyll-theme
 #theme: clean-jekyll-theme
 #theme: minima
+#theme: jekyll-theme-architect
+
 #highlighter: rouge
 markdown: kramdown
 kramdown:

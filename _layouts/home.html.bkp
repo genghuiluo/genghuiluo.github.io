@@ -2,22 +2,30 @@
 layout: default
 ---
 
-<ul class="list-reset">
-    {% for post in site.posts %}
-    <li>
-        <div class="clearfix">
-            <div class="col col-8 left-align pr1">
-                <a href="{{ post.url | relative_url }}">
-                    {{ post.title }}
-                </a>
+{% assign sorted_cats = site.categories | sort %}
+{% for category in sorted_cats %}
+    
+    <!--<h2 id="{{category[0] | uri_escape | downcase }}">{{category[0] | upcase}}</h2>-->
+    {% assign sorted_posts = category[1] | reversed %}
+    <ul class="list-reset">
+        {% for post in sorted_posts %}
+        <li>
+            <div class="clearfix">
+                <div class="col col-3 left-align pr1">
+                    <span>{{ post.date | date: '%Y-%m-%d %H:%M:%S, %a' }}</span>
+                </div>
+                <div class="col col-8 left-align pr1">
+                    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                </div>
+                <div class="col col-1 right-align pl1">
+                    <span>{{ post.categories }}</span>
+                </div>
             </div>
-            <div class="col col-2 left-align pr1">
-                <b><i>{{ post.categories }}</i></b>
-            </div>
-            <div class="col col-2 right-align pl1">
-                <span>{{ post.date | date: '%d %b, %Y' }}</span>
-            </div>
-        </div>
-    </li>
-    {% endfor %}
-</ul>
+        </li>
+        <hr class="line"></hr> 
+        {% endfor %}
+    </ul> 
+    <!-- delimeted line between categories -->
+    <hr class="line"></hr> 
+{% endfor %}
+

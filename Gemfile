@@ -16,6 +16,7 @@ gem "jekyll", "3.3.1"
 #gem "clean-jekyll-theme"
 gem "classic-jekyll-theme"
 gem "rouge"
+#gem "jekyll-theme-architect"
 
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
 # uncomment the line below. To upgrade, run `bundle update github-pages`.

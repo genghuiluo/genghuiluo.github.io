@@ -16,6 +16,7 @@ html {
 
 a {
     color: CornflowerBlue;
+    text-decoration: none;
 }
 
 code {
