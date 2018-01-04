@@ -1,7 +1,7 @@
 html {
     /*font-family: 'PT Sans', sans-serif;
     background-color: #ffffff;*/
-    font-family: 'Cabin Sketch', cursive;
+    font-family: 'Encode Sans Expanded', sans-serif;
     /*font-family: 'Open Sans', sans-serif;*/
     background-color: white; 
     color: black;
@@ -16,7 +16,7 @@ html {
 }
 
 a {
-    color: CornflowerBlue;
+    color: grey;
     text-decoration: none;
 }
 
@@ -26,8 +26,7 @@ pre {
 
 .site-title {
     color: black;
-    font-family: 'Cabin Sketch', cursive;
-    font-size: 30px;
+    font-family: 'Encode Sans Expanded', sans-serif;
 }
 
 a {
@@ -41,7 +40,7 @@ a {
 
 
 .highlight {
-    background-color: Black !important; /* important for no overwrite */
+    background-color: black !important; /* important for no overwrite */
 }
 
 /* hr, delimeted line between categories */
