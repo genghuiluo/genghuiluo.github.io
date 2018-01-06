@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Weibo Hotkey Dashboard
-date: 2017-10-11 13:23:43 +0800
+date: 2018-01-06 11:44:04 +0800
 categories: web
 ---
 
@@ -15,7 +15,7 @@ var weibo_3d_chart = echarts.init(document.getElementById('weibo_3d'));
 var weibo_1d_chart = echarts.init(document.getElementById('weibo_1d'));
 
 function updateChart(day,element,title) {
-$.getJSON('https://dev.genghuiluo.cn/feed/weibo/realtimehot.json?day='+day, function(data){
+$.getJSON('http://feed.genghuiluo.cn/weibo/realtimehot.json?day='+day, function(data){
 
 
 		var xdata = [];
