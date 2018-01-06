@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Weibo Hotkey Dashboard
-date: 2018-01-06 11:44:04 +0800
+date: 2018-01-06 21:03:33 +0800
 categories: web
 ---
 
@@ -18,15 +18,15 @@ function updateChart(day,element,title) {
 $.getJSON('http://feed.genghuiluo.cn/weibo/realtimehot.json?day='+day, function(data){
 
 
-		var xdata = [];
-		var ydata = [];
+	var xdata = [];
+	var ydata = [];
 
-		$.each( data, function( key, val ) {
+	$.each( data, function( key, val ) {
 			xdata.push(val.key_text);	
 			ydata.push(val.point);	
         });
 
-  	        var option = {
+  	var option = {
             title: {
                 text: title,
 				textStyle: {  
@@ -40,15 +40,15 @@ $.getJSON('http://feed.genghuiluo.cn/weibo/realtimehot.json?day='+day, function(
             },
             xAxis: {
                 data: xdata,
-				axisLine:{  
+		axisLine:{  
                     lineStyle:{  
                         color:'black',  
                         width: 2
                     }  
                 },
-				axisLabel: {
-				     interval: 0, //横轴信息全部显示
-                     rotate: -30,
+		axisLabel: {
+			interval: 0, //横轴信息全部显示
+                	rotate: -30,
                 }
             },
             yAxis: {
