@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Live site dashboard 
-date: 2018-01-06 21:57:53 +0800
+date: 2018-01-06 22:03:12 +0800
 categories: web
 ---
 
@@ -89,28 +89,28 @@ function updateChart(month, element, title) {
     		        name:'战旗',
     		        type:'line',
     		        stack: 'total_view_by_hour',
-    		        areaStyle: {normal: {}},
+    		        areaStyle: {normal: {color: '#ff7f50'}},
     		        data: ydata_zhanqi
     		    },
     		    {
     		        name:'虎牙',
     		        type:'line',
     		        stack: 'total_view_by_hour',
-    		        areaStyle: {normal: {}},
+    		        areaStyle: {normal: {color: '#ff69b4'}},
     		        data: ydata_huya
     		    },
     		    {
     		        name:'斗鱼',
     		        type:'line',
     		        stack: 'total_view_by_hour',
-    		        areaStyle: {normal: {}},
+    		        areaStyle: {normal: {color: '#1e90ff'}},
     		        data: ydata_douyu
     		    },
     		    {
     		        name:'熊猫',
     		        type:'line',
     		        stack: '总量',
-    		        areaStyle: {normal: {}},
+    		        areaStyle: {normal: {color: '#6b8e23'}},
     		        data: ydata_panda
     		    },
     		    {
@@ -123,7 +123,7 @@ function updateChart(month, element, title) {
     		                position: 'top'
     		            }
     		        },
-    		        areaStyle: {normal: {}},
+    		        areaStyle: {normal: {color: '#30e0e0'}},
     		        data: ydata_huomao
     		    }
     		]

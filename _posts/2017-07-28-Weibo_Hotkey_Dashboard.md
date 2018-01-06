@@ -22,17 +22,17 @@ $.getJSON('http://feed.genghuiluo.cn/weibo/realtimehot.json?day='+day, function(
 	var ydata = [];
 
 	$.each( data, function( key, val ) {
-			xdata.push(val.key_text);	
-			ydata.push(val.point);	
+		xdata.push(val.key_text);	
+		ydata.push(val.point);	
         });
 
   	var option = {
             title: {
                 text: title,
-				textStyle: {  
-        			fontWeight: 'normal',              //标题颜色  
-        			color: 'black'  
-    			} 
+		textStyle: {  
+        		fontWeight: 'normal',              //标题颜色  
+        		color: 'black'  
+    		} 
             },
             tooltip: {},
             grid: {
