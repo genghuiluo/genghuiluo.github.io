@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 利用简单的python爬虫获取直播平台数据
+title: utilize python(bs4) to capture data of live sites
 date: 2017-09-03 22:07:44 +0800
 categories: python
 ---
