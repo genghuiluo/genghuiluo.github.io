@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Live site dashboard 
-date: 2018-01-28 00:04:57 +0800
+date: 2018-01-28 00:13:41 +0800
 categories: web
 ---
 
@@ -49,98 +49,7 @@ function updateChart(month, element, title) {
 			break;
 		}
         });
-
-option = {
-	title: {
-		text: title
-	},
-
-    tooltip : {
-        trigger: 'axis',
-        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
-            type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
-        }
-    },
-    legend: {
-    	data:['战旗','虎牙','斗鱼','熊猫','火猫']
-    },
-    grid: {
-        left: '3%',
-        right: '4%',
-        bottom: '3%',
-        containLabel: true
-    },
-    xAxis:  {
-        type: 'value'
-    },
-    yAxis: {
-        type: 'category',
-        data: xdata.reverse()
-    },
-    series: [
-        {
-            name: '战旗',
-            type: 'bar',
-            stack: '总量',
-            label: {
-                normal: {
-                    show: true,
-                    position: 'insideRight'
-                }
-            },
-            data: ydata_zhanqi
-        },
-        {
-            name: '虎牙',
-            type: 'bar',
-            stack: '总量',
-            label: {
-                normal: {
-                    show: true,
-                    position: 'insideRight'
-                }
-            },
-            data: ydata_huya
-        },
-        {
-            name: '斗鱼',
-            type: 'bar',
-            stack: '总量',
-            label: {
-                normal: {
-                    show: true,
-                    position: 'insideRight'
-                }
-            },
-            data: ydata_douyu
-        },
-        {
-            name: '熊猫',
-            type: 'bar',
-            stack: '总量',
-            label: {
-                normal: {
-                    show: true,
-                    position: 'insideRight'
-                }
-            },
-            data: ydata_panda
-        },
-        {
-            name: '火猫',
-            type: 'bar',
-            stack: '总量',
-            label: {
-                normal: {
-                    show: true,
-                    position: 'insideRight'
-                }
-            },
-            data: ydata_huomao
-        }
-    ]
-};
-/*
+	
 	option = {
     		title: {
     		    text: title
@@ -225,7 +134,7 @@ option = {
     		    }
     		]
 	};
-*/
+	
 	element.setOption(option);
 	})
 }
