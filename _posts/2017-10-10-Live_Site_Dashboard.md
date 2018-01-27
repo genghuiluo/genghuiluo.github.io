@@ -1,24 +1,20 @@
 ---
 layout: post
 title: Live site dashboard 
-date: 2018-01-28 00:50:08 +0800
+date: 2018-01-28 01:08:32 +0800
 categories: web
 ---
 
 
-<!--<div id="live_site_4" style="width: 100%; min-height: 600px"></div>-->
 <div id="live_site_5" style="width: 100%; min-height: 800px"></div>
-<!--<div id="live_site_6" style="width: 100%; min-height: 600px"></div>
-<div id="live_site_7" style="width: 100%; min-height: 600px"></div>-->
+<div id="live_site_6" style="width: 100%; min-height: 600px"></div>
 
 <script type="text/javascript">
 
-//var live_site_chart_4 = echarts.init(document.getElementById('live_site_4'));
-//var live_site_chart_6 = echarts.init(document.getElementById('live_site_5'));
 var live_site_chart_5 = echarts.init(document.getElementById('live_site_5'));
-//var live_site_chart_7 = echarts.init(document.getElementById('live_site_7'));
+var live_site_chart_6 = echarts.init(document.getElementById('live_site_6'));
 
-function updateChart(month, element, title) {
+function updateLineChart(month, element, title) {
 	$.getJSON('http://feed.genghuiluo.cn/live/total_view_by_hour.json?month=' + month, function(data){
 
 	var xdata = [];
@@ -26,7 +22,7 @@ function updateChart(month, element, title) {
 	var ydata_huya = []
 	var ydata_douyu = []
 	var ydata_panda = []
-	var ydata_huomao = []
+	//var ydata_huomao = []
 	
 	$.each( data, function( key, val ) {
 
@@ -44,9 +40,11 @@ function updateChart(month, element, title) {
 		case 'panda':
 			ydata_panda.push(val.total_view);
 			break;
+		/*
 		case 'huomao':
 			ydata_huomao.push(val.total_view);
 			break;
+		*/
 		}
         });
 	
@@ -82,7 +80,7 @@ function updateChart(month, element, title) {
     		        //type : 'time',
     		        type : 'category',
     		        boundaryGap : false,
-    		        data : xdata.reverse()
+    		        data : xdata
     		    }
     		],
     		yAxis : [
@@ -139,11 +137,68 @@ function updateChart(month, element, title) {
 	})
 }
 
+function updatePieChart(month, element, title) {
+	$.getJSON('http://feed.genghuiluo.cn/live/total_view_by_category.json', function(data){
+	
+	var xdata = [];
+	var ydata = []
+
+	$.each( data, function( key, val ) {
+		xdata.push(val.site_category);
+		ydata.push({value:val.total_view, name:'${val.site_category}'});
+	}
+
+	option = {
+	    title: {
+    		text: title
+    	    },
+	    tooltip: {
+	        trigger: 'item',
+	        formatter: "{a} <br/>{b}: {c} ({d}%)"
+	    },
+	    legend: {
+	        orient: 'vertical',
+	        x: 'left',
+	        data: xdata
+	    },
+	    series: [
+	        {
+	            name:'游戏类别',
+	            type:'pie',
+	            radius: ['50%', '70%'],
+	            avoidLabelOverlap: false,
+	            label: {
+	                normal: {
+	                    show: false,
+	                    position: 'center'
+	                },
+	                emphasis: {
+	                    show: true,
+	                    textStyle: {
+	                        fontSize: '30',
+	                        fontWeight: 'bold'
+	                    }
+	                }
+	            },
+	            labelLine: {
+	                normal: {
+	                    show: false
+	                }
+	            },
+	            data: ydata
+	        }
+	    ]
+	};
+	
+	element.setOption(option);
+	})
+}
+
+
+
 $(document).ready(function() {
-    //updateChart(4, live_site_chart_4,'April,2017 - live site dashboard');
-    updateChart(5, live_site_chart_5,'May,2017 - live site dashboard');
-    //updateChart(6, live_site_chart_6,'June,2017 - live site dashboard');
-    //updateChart(7, live_site_chart_7,'July,2017 - live site dashboard');
+    updateLineChart(5, live_site_chart_5,'May, 2017 - Total view by Hour');
+    updatePieChart(123, live_site_chart_6,'Total view per hour by Catetory');
 });
 
 
