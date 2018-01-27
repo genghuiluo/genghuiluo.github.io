@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Live site dashboard 
-date: 2018-01-28 02:01:08 +0800
+date: 2018-01-28 02:03:12 +0800
 categories: web
 ---
 
@@ -168,9 +168,14 @@ function updatePieChart(month, element, title) {
 	    },
 	    legend: {
 	        orient: 'vertical',
-	        x: 'left',
+	        x: 'right',
 	        data: xdata
 	    },
+	    toolbox: {
+    		feature: {
+    		    saveAsImage: {}
+    		}
+    	    },
 	    series: [
 	        {
 	            name:'游戏类别',
