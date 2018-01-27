@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Live site dashboard 
-date: 2018-01-28 00:13:41 +0800
+date: 2018-01-28 00:19:07 +0800
 categories: web
 ---
 
@@ -79,16 +79,17 @@ function updateChart(month, element, title) {
     		},
     		xAxis : [
     		    {
+    		        type : 'value'
+    		    }
+    		],
+    		yAxis : [
+		    {
     		        //type : 'time',
     		        type : 'category',
     		        boundaryGap : false,
     		        data : xdata
     		    }
-    		],
-    		yAxis : [
-    		    {
-    		        type : 'value'
-    		    }
+
     		],
     		series : [
     		    {
