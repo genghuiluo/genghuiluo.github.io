@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Live site dashboard 
-date: 2018-01-28 02:05:54 +0800
+date: 2018-01-28 02:07:31 +0800
 categories: web
 ---
 
@@ -51,6 +51,7 @@ function updateLineChart(month, element, title) {
 	option = {
     		title: {
     		    text: title
+		    x: 'center'
     		},
     		tooltip : {
     		    trigger: 'axis',
@@ -62,9 +63,11 @@ function updateLineChart(month, element, title) {
     		    }
     		},
     		legend: {
+		    x: 'right'
     		    data:['战旗','虎牙','斗鱼','熊猫','火猫']
     		},
     		toolbox: {
+		    x: 'left'
     		    feature: {
     		        saveAsImage: {}
     		    }
@@ -161,6 +164,7 @@ function updatePieChart(month, element, title) {
 	option = {
 	    title: {
     		text: title
+		x: 'center'
     	    },
 	    tooltip: {
 	        trigger: 'item',
@@ -172,7 +176,7 @@ function updatePieChart(month, element, title) {
 	        data: xdata
 	    },
 	    toolbox: {
-		x: 'center'
+		x: 'left'
     		feature: {
     		    saveAsImage: {}
     		}
