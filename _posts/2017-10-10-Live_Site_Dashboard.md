@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Live site dashboard 
-date: 2018-01-28 01:59:52 +0800
+date: 2018-01-28 02:01:08 +0800
 categories: web
 ---
 
@@ -150,12 +150,12 @@ function updatePieChart(month, element, title) {
 	$.each( data, function( key, val ) {
 		xdata.push(val.site_category);
 		ydata["value"] = val.total_view;
-		ydata["name"] = "${val.site_category}";
+		ydata["name"] = val.site_category;
 		ydatas.push(ydata);
 		ydata = {}
 	});
 
-	alert(ydata);
+	//alert(ydata);
 	//var jsonString = JSON.stringify(ydatas);
 
 	option = {
