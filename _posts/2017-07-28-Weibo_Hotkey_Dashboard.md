@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Weibo Hotkey Dashboard
-date: 2018-01-27 12:16:25 +0800
+date: 2018-01-27 12:25:07 +0800
 categories: web
 ---
 
@@ -23,7 +23,7 @@ $.getJSON('http://feed.genghuiluo.cn/weibo/'+endpoint+'.json?'+param, function(d
 
 	$.each( data, function( key, val ) {
 		xdata.push(val.key_text);	
-		ydata.push(val.point);	
+		ydata.push(val.key_value);	
         });
 
   	var option = {
