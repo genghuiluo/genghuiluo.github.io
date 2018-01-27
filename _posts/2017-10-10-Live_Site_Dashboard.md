@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Live site dashboard 
-date: 2018-01-06 22:03:12 +0800
+date: 2018-01-27 23:48:09 +0800
 categories: web
 ---
 
@@ -13,10 +13,10 @@ categories: web
 
 <script type="text/javascript">
 
-var live_site_chart_4 = echarts.init(document.getElementById('live_site_4'));
-var live_site_chart_6 = echarts.init(document.getElementById('live_site_5'));
+//var live_site_chart_4 = echarts.init(document.getElementById('live_site_4'));
+//var live_site_chart_6 = echarts.init(document.getElementById('live_site_5'));
 var live_site_chart_5 = echarts.init(document.getElementById('live_site_6'));
-var live_site_chart_7 = echarts.init(document.getElementById('live_site_7'));
+//var live_site_chart_7 = echarts.init(document.getElementById('live_site_7'));
 
 function updateChart(month, element, title) {
 	$.getJSON('http://feed.genghuiluo.cn/live/total_view_by_hour.json?month=' + month, function(data){
@@ -50,6 +50,97 @@ function updateChart(month, element, title) {
 		}
         });
 
+option = {
+	title: {
+		text: title
+	},
+
+    tooltip : {
+        trigger: 'axis',
+        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+            type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+        }
+    },
+    legend: {
+    	data:['战旗','虎牙','斗鱼','熊猫','火猫']
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis:  {
+        type: 'value'
+    },
+    yAxis: {
+        type: 'category',
+        data: xdata
+    },
+    series: [
+        {
+            name: '战旗',
+            type: 'bar',
+            stack: '总量',
+            label: {
+                normal: {
+                    show: true,
+                    position: 'insideRight'
+                }
+            },
+            data: ydata_zhanqi
+        },
+        {
+            name: '虎牙',
+            type: 'bar',
+            stack: '总量',
+            label: {
+                normal: {
+                    show: true,
+                    position: 'insideRight'
+                }
+            },
+            data: ydata_huya
+        },
+        {
+            name: '斗鱼',
+            type: 'bar',
+            stack: '总量',
+            label: {
+                normal: {
+                    show: true,
+                    position: 'insideRight'
+                }
+            },
+            data: ydata_douyu
+        },
+        {
+            name: '熊猫',
+            type: 'bar',
+            stack: '总量',
+            label: {
+                normal: {
+                    show: true,
+                    position: 'insideRight'
+                }
+            },
+            data: ydata_panda
+        },
+        {
+            name: '火猫',
+            type: 'bar',
+            stack: '总量',
+            label: {
+                normal: {
+                    show: true,
+                    position: 'insideRight'
+                }
+            },
+            data: ydata_huomao
+        }
+    ]
+};
+/*
 	option = {
     		title: {
     		    text: title
@@ -134,16 +225,16 @@ function updateChart(month, element, title) {
     		    }
     		]
 	};
-
+*/
 	element.setOption(option);
 	})
 }
 
 $(document).ready(function() {
-    updateChart(4, live_site_chart_4,'April,2017 - live site dashboard');
+    //updateChart(4, live_site_chart_4,'April,2017 - live site dashboard');
     updateChart(5, live_site_chart_5,'May,2017 - live site dashboard');
-    updateChart(6, live_site_chart_6,'June,2017 - live site dashboard');
-    updateChart(7, live_site_chart_7,'July,2017 - live site dashboard');
+    //updateChart(6, live_site_chart_6,'June,2017 - live site dashboard');
+    //updateChart(7, live_site_chart_7,'July,2017 - live site dashboard');
 });
 
 

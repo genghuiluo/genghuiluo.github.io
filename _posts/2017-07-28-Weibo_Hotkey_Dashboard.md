@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Weibo Hotkey Dashboard
-date: 2018-01-27 12:39:28 +0800
+date: 2018-01-27 23:46:43 +0800
 categories: web
 ---
 
@@ -96,16 +96,16 @@ $.getJSON('http://feed.genghuiluo.cn/weibo/'+endpoint+'.json?'+param, function(d
 }
 
 $(document).ready(function() {
-    updateChart('hour=6',weibo_12h_chart,'6小时内下降最快的#hash tag#','max_change');
-    updateChart('day=1',weibo_1d_chart,'一天内最具人气的#hash tag#','realtimehot');
-    updateChart('day=7',weibo_1w_chart,'一周内最具人气的#hash tag#','realtimehot');
+    updateChart('hour=6',weibo_12h_chart,'Max rank change of #hotkey# in 6h','max_change');
+    updateChart('day=1',weibo_1d_chart,'Most popular #hotkey# in 1d','realtimehot');
+    updateChart('day=7',weibo_1w_chart,'Most popular #hotkey# in 1w','realtimehot');
 });
 
-//refresh each 3600s
+//refresh each 1800s
 var refresh=window.setInterval(function(){
-    updateChart('hour=6',weibo_12h_chart,'6小时内下降最快的#hash tag#','max_change');
-    updateChart('day=1',weibo_1d_chart,'一天内最具人气的#hash tag#','realtimehot');
-    updateChart('day=7',weibo_1w_chart,'一周内最具人气的#hash tag#','realtimehot');
-},3600000);        
+    updateChart('hour=6',weibo_12h_chart,'Max rank change of #hotkey# in 6h','max_change');
+    updateChart('day=1',weibo_1d_chart,'Most popular #hotkey# in 1d','realtimehot');
+    updateChart('day=7',weibo_1w_chart,'Most popular #hotkey# in 1w','realtimehot');
+},1800000);        
 
 </script>
