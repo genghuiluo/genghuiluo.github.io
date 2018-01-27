@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Live site dashboard 
-date: 2018-01-28 01:39:20 +0800
+date: 2018-01-28 01:43:18 +0800
 categories: web
 ---
 
@@ -143,12 +143,19 @@ function updatePieChart(month, element, title) {
 	$.getJSON('http://feed.genghuiluo.cn/live/total_view_by_category.json', function(data){
 	
 	var xdata = [];
-	var ydata = [];
-
+	// http://blog.csdn.net/zhouyanldh/article/details/6976280
+	var ydatas = [];
+	var ydata = {};
+	
 	$.each( data, function( key, val ) {
 		xdata.push(val.site_category);
-		ydata.push('{value:'+val.total_view+', name:"'+val.site_category+'"}');
+		ydata[value] = val.total_view;
+		ydata[name] = '${val.site_category}';
+		ydatas.push(ydata);
+		ydata.clear()
 	});
+
+	var jsonString = JSON.stringify(ydatas);
 
 	option = {
 	    title: {
@@ -187,7 +194,7 @@ function updatePieChart(month, element, title) {
 	                    show: false
 	                }
 	            },
-	            data: ydata
+	            data: jsonString
 	        }
 	    ]
 	};
