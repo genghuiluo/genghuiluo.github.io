@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Live site dashboard 
-date: 2018-01-28 01:56:28 +0800
+date: 2018-01-28 01:59:52 +0800
 categories: web
 ---
 
@@ -155,7 +155,8 @@ function updatePieChart(month, element, title) {
 		ydata = {}
 	});
 
-	var jsonString = JSON.stringify(ydatas);
+	alert(ydata);
+	//var jsonString = JSON.stringify(ydatas);
 
 	option = {
 	    title: {
@@ -194,7 +195,7 @@ function updatePieChart(month, element, title) {
 	                    show: false
 	                }
 	            },
-	            data: jsonString
+	            data: ydatas
 	        }
 	    ]
 	};
