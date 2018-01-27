@@ -1,21 +1,21 @@
 ---
 layout: post
 title: Live site dashboard 
-date: 2018-01-27 23:48:09 +0800
+date: 2018-01-27 23:58:03 +0800
 categories: web
 ---
 
 
 <div id="live_site_4" style="width: 100%; min-height: 600px"></div>
 <div id="live_site_5" style="width: 100%; min-height: 600px"></div>
-<div id="live_site_6" style="width: 100%; min-height: 600px"></div>
+<div id="live_site_6" style="width: 100%; min-height: 1800px"></div>
 <div id="live_site_7" style="width: 100%; min-height: 600px"></div>
 
 <script type="text/javascript">
 
 //var live_site_chart_4 = echarts.init(document.getElementById('live_site_4'));
 //var live_site_chart_6 = echarts.init(document.getElementById('live_site_5'));
-var live_site_chart_5 = echarts.init(document.getElementById('live_site_6'));
+var live_site_chart_5 = echarts.init(document.getElementById('live_site_5'));
 //var live_site_chart_7 = echarts.init(document.getElementById('live_site_7'));
 
 function updateChart(month, element, title) {
@@ -75,7 +75,7 @@ option = {
     },
     yAxis: {
         type: 'category',
-        data: xdata
+        data: xdata.reverse();
     },
     series: [
         {
