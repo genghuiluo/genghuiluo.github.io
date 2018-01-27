@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Live site dashboard 
-date: 2018-01-28 00:19:07 +0800
+date: 2018-01-28 00:33:45 +0800
 categories: web
 ---
 
@@ -32,13 +32,13 @@ function updateChart(month, element, title) {
 
 		switch (val.site) {
 		case 'zhanqi':
-			xdata.push(val.by_hour);
 			ydata_zhanqi.push(val.total_view);
 			break;
 		case 'huya':
 			ydata_huya.push(val.total_view);
 			break;
 		case 'douyu':
+			xdata.push(val.format_by_hour);
 			ydata_douyu.push(val.total_view);
 			break;
 		case 'panda':
