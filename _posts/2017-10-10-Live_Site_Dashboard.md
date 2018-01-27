@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Live site dashboard 
-date: 2018-01-27 23:58:03 +0800
+date: 2018-01-28 00:02:53 +0800
 categories: web
 ---
 
@@ -75,7 +75,7 @@ option = {
     },
     yAxis: {
         type: 'category',
-        data: xdata.reverse();
+        data: xdata.reverse()
     },
     series: [
         {
