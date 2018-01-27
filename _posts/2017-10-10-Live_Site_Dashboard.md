@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Live site dashboard 
-date: 2018-01-28 02:03:12 +0800
+date: 2018-01-28 02:05:54 +0800
 categories: web
 ---
 
@@ -172,6 +172,7 @@ function updatePieChart(month, element, title) {
 	        data: xdata
 	    },
 	    toolbox: {
+		x: 'center'
     		feature: {
     		    saveAsImage: {}
     		}
