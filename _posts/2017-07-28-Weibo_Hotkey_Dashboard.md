@@ -1,21 +1,21 @@
 ---
 layout: post
 title: Weibo Hotkey Dashboard
-date: 2018-01-06 21:03:33 +0800
+date: 2018-01-27 12:16:25 +0800
 categories: web
 ---
 
-<div id="weibo_1w" style="width: 100%; min-height: 600px"></div>
-<div id="weibo_3d" style="width: 100%; min-height: 600px"></div>
+<!--<div id="weibo_1w" style="width: 100%; min-height: 600px"></div>-->
+<div id="weibo_12h" style="width: 100%; min-height: 600px"></div>
 <div id="weibo_1d" style="width: 100%; min-height: 600px"></div>
 <script type="text/javascript">
 // 基于准备好的dom，初始化echarts实例
-var weibo_1w_chart = echarts.init(document.getElementById('weibo_1w'));
-var weibo_3d_chart = echarts.init(document.getElementById('weibo_3d'));
+//var weibo_1w_chart = echarts.init(document.getElementById('weibo_1w'));
+var weibo_12h_chart = echarts.init(document.getElementById('weibo_12h'));
 var weibo_1d_chart = echarts.init(document.getElementById('weibo_1d'));
 
-function updateChart(day,element,title) {
-$.getJSON('http://feed.genghuiluo.cn/weibo/realtimehot.json?day='+day, function(data){
+function updateChart(param,element,title,endpoint) {
+$.getJSON('http://feed.genghuiluo.cn/weibo/'+endpoint+'.json?'+param, function(data){
 
 
 	var xdata = [];
@@ -95,16 +95,16 @@ $.getJSON('http://feed.genghuiluo.cn/weibo/realtimehot.json?day='+day, function(
 }
 
 $(document).ready(function() {
-    updateChart(7,weibo_1w_chart,'微博实时 top10 关键字(最近1周)');
-    updateChart(3,weibo_3d_chart,'微博实时 top10 关键字(最近3天)');
-    updateChart(1,weibo_1d_chart,'微博实时 top10 关键字(最近1天)');
+    //updateChart(7,weibo_1w_chart,'微博实时 top10 关键字(最近1周)');
+    updateChart('hour=6',weibo_12h_chart,'6小时内下降最快的#hash tag#','max_change');
+    updateChart('day=1',weibo_1d_chart,'一天内最具人气的#hash tag#','realtimehot');
 });
 
 //refresh each 300s
 var refresh=window.setInterval(function(){
-    updateChart(7,weibo_1w_chart,'微博实时 top10 关键字(最近1周)');
-    updateChart(3,weibo_3d_chart,'微博实时 top10 关键字(最近3天)');
-    updateChart(1,weibo_1d_chart,'微博实时 top10 关键字(最近1天)');
+    //updateChart(7,weibo_1w_chart,'微博实时 top10 关键字(最近1周)');
+    updateChart('hour=6',weibo_12h_chart,'6小时内下降最快的#hash tag#','max_change');
+    updateChart('day=1',weibo_1d_chart,'一天内最具人气的#hash tag#','realtimehot');
 },300000);        
 
 </script>
