@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Live site dashboard 
-date: 2018-01-28 01:38:14 +0800
+date: 2018-01-28 01:39:20 +0800
 categories: web
 ---
 
@@ -117,6 +117,7 @@ function updateLineChart(month, element, title) {
     		        areaStyle: {normal: {}},
     		        data: ydata_panda
     		    },
+		/*
     		    {
     		        name:'火猫',
     		        type:'line',
@@ -130,6 +131,7 @@ function updateLineChart(month, element, title) {
     		        areaStyle: {normal: {}},
     		        data: ydata_huomao
     		    }
+		*/
     		]
 	};
 	
