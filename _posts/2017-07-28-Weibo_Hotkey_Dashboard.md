@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Weibo Hotkey Dashboard
-date: 2018-01-30 21:40:15 +0800
+date: 2018-01-30 21:59:01 +0800
 categories: web
 ---
 
@@ -16,7 +16,6 @@ var weibo_key_num_chart = echarts.init(document.getElementById('weibo_key_num'))
 function updateBarChart(element,title) {
 $.getJSON('http://feed.genghuiluo.cn/weibo/top10.json', function(data){
 
-
 	var xdata = [];
 	var ydata = [];
 
@@ -28,15 +27,18 @@ $.getJSON('http://feed.genghuiluo.cn/weibo/top10.json', function(data){
   	var option = {
             title: {
                 text: title,
-		textStyle: {  
-        		fontWeight: 'normal',              //标题颜色  
-        		color: 'black'  
-    		} 
+		x: 'center'	
             },
             tooltip: {},
             grid: {
                 y2: 140
             },
+	    toolbox: {
+		x: 'left',
+	        feature: {
+	            saveAsImage: {}
+	        }
+	    },
             xAxis: {
                 data: xdata,
 		axisLine:{  
@@ -111,13 +113,15 @@ $.getJSON('http://feed.genghuiluo.cn/weibo/key_num.json', function(data){
 
 	option = {
 	    title: {
-	        text: title
+	        text: title,
+		x: 'center'
 	    },
 	    tooltip: {
 	        trigger: 'axis'
 	    },
 	    legend: {
-	        data: ['MAX','AVG','MIN']
+	        data: ['MAX','AVG','MIN'],
+		x: 'right'
 	    },
 	    grid: {
 	        left: '3%',
@@ -126,6 +130,7 @@ $.getJSON('http://feed.genghuiluo.cn/weibo/key_num.json', function(data){
 	        containLabel: true
 	    },
 	    toolbox: {
+		x: 'left',
 	        feature: {
 	            saveAsImage: {}
 	        }
