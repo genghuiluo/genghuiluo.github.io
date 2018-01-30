@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Live site dashboard 
-date: 2018-01-28 02:11:09 +0800
+date: 2018-01-28 12:40:38 +0800
 categories: web
 ---
 
@@ -183,7 +183,7 @@ function updatePieChart(month, element, title) {
     	    },
 	    series: [
 	        {
-	            name:'游戏类别',
+	            name:'合计访问(每小时人次):',
 	            type:'pie',
 	            radius: ['50%', '70%'],
 	            avoidLabelOverlap: false,

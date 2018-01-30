@@ -1,22 +1,20 @@
 ---
 layout: post
 title: Weibo Hotkey Dashboard
-date: 2018-01-27 23:46:43 +0800
+date: 2018-01-30 21:40:15 +0800
 categories: web
 ---
 
-<div id="weibo_12h" style="width: 100%; min-height: 600px"></div>
-<div id="weibo_1d" style="width: 100%; min-height: 600px"></div>
-<div id="weibo_1w" style="width: 100%; min-height: 600px"></div>
+<div id="weibo_top10" style="width: 100%; min-height: 600px"></div>
+<div id="weibo_key_num" style="width: 100%; min-height: 600px"></div>
 <script type="text/javascript">
 
 // 基于准备好的dom，初始化echarts实例
-var weibo_12h_chart = echarts.init(document.getElementById('weibo_12h'));
-var weibo_1d_chart = echarts.init(document.getElementById('weibo_1d'));
-var weibo_1w_chart = echarts.init(document.getElementById('weibo_1w'));
+var weibo_top10_chart = echarts.init(document.getElementById('weibo_top10'));
+var weibo_key_num_chart = echarts.init(document.getElementById('weibo_key_num'));
 
-function updateChart(param,element,title,endpoint) {
-$.getJSON('http://feed.genghuiluo.cn/weibo/'+endpoint+'.json?'+param, function(data){
+function updateBarChart(element,title) {
+$.getJSON('http://feed.genghuiluo.cn/weibo/top10.json', function(data){
 
 
 	var xdata = [];
@@ -24,7 +22,7 @@ $.getJSON('http://feed.genghuiluo.cn/weibo/'+endpoint+'.json?'+param, function(d
 
 	$.each( data, function( key, val ) {
 		xdata.push(val.key_text);	
-		ydata.push(val.key_value);	
+		ydata.push(val.on_rank_cnt);	
         });
 
   	var option = {
@@ -95,17 +93,87 @@ $.getJSON('http://feed.genghuiluo.cn/weibo/'+endpoint+'.json?'+param, function(d
 	})
 }
 
+function updateLineChart(element,title) {
+$.getJSON('http://feed.genghuiluo.cn/weibo/key_num.json', function(data){
+
+
+	var xdata = [];
+	var max_data = [];
+	var avg_data = [];
+	var min_data = [];
+
+	$.each( data, function( key, val ) {
+		xdata.push(val.dayofweek);	
+		max_data.push(val.max_key_num);	
+		avg_data.push(val.avg_key_num);	
+		min_data.push(val.min_key_num);	
+        });
+
+	option = {
+	    title: {
+	        text: title
+	    },
+	    tooltip: {
+	        trigger: 'axis'
+	    },
+	    legend: {
+	        data: ['MAX','AVG','MIN']
+	    },
+	    grid: {
+	        left: '3%',
+	        right: '4%',
+	        bottom: '3%',
+	        containLabel: true
+	    },
+	    toolbox: {
+	        feature: {
+	            saveAsImage: {}
+	        }
+	    },
+	    xAxis: {
+	        type: 'category',
+	        data: xdata
+	    },
+	    yAxis: {
+	        type: 'value'
+	    },
+	    series: [
+	        {
+	            name:'MAX',
+	            type:'line',
+	            step: 'start',
+	            data:max_data
+	        },
+	        {
+	            name:'AVG',
+	            type:'line',
+	            step: 'middle',
+	            data:avg_data
+	        },
+	        {
+	            name:'MIN',
+	            type:'line',
+	            step: 'end',
+	            data:min_data
+	        }
+	    ]
+	};
+ 
+	element.setOption(option);
+
+	})
+}
+
+
 $(document).ready(function() {
-    updateChart('hour=6',weibo_12h_chart,'Max rank change of #hotkey# in 6h','max_change');
-    updateChart('day=1',weibo_1d_chart,'Most popular #hotkey# in 1d','realtimehot');
-    updateChart('day=7',weibo_1w_chart,'Most popular #hotkey# in 1w','realtimehot');
+    updateBarChart(weibo_top10_chart,'#Hotkey# on rank count TOP10');
+    updateLineChart(weibo_key_num_chart,'#Hotkey# index by DayofWeek');
 });
 
 //refresh each 1800s
 var refresh=window.setInterval(function(){
-    updateChart('hour=6',weibo_12h_chart,'Max rank change of #hotkey# in 6h','max_change');
-    updateChart('day=1',weibo_1d_chart,'Most popular #hotkey# in 1d','realtimehot');
-    updateChart('day=7',weibo_1w_chart,'Most popular #hotkey# in 1w','realtimehot');
+    updateBarChart(weibo_top10,'#Hotkey# on rank count TOP10');
+    updateLineChart(weibo_key_num_chart,'#Hotkey# index by DayofWeek');
 },1800000);        
 
 </script>
