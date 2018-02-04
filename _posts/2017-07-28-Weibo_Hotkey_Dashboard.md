@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Weibo Hotkey Dashboard
-date: 2018-01-30 22:28:01 +0800
+date: 2018-02-04 20:46:34 +0800
 categories: web
 ---
 
@@ -100,17 +100,15 @@ $.getJSON('http://feed.genghuiluo.cn/weibo/key_num.json', function(data){
 
 
 	var xdata = [];
-	//var max_data = [];
-	var top10_data = [];
-	var top20_data = [];
-	var top50_data = [];
+	var max_key_num = [];
+	var large_15_max = [];
+	var large_30_max = [];
 
 	$.each( data, function( key, val ) {
 		xdata.push(val.dayofweek);	
-		//max_data.push(val.max_key_num);	
-		top10_data.push(val.top10_avg);	
-		top20_data.push(val.top20_avg);	
-		top50_data.push(val.top50_avg);	
+		max_key_num.push(val.max_key_num);	
+		large_15_max.push(val.large_15_max);	
+		large_30_max.push(val.large_15_max);	
         });
 
 	option = {
@@ -122,8 +120,7 @@ $.getJSON('http://feed.genghuiluo.cn/weibo/key_num.json', function(data){
 	        trigger: 'axis'
 	    },
 	    legend: {
-	        //data: ['MAX','TOP10-AVG','TOP20-AVG','TOP50-AVG'],
-	        data: ['TOP10-AVG','TOP20-AVG','TOP50-AVG'],
+	        data: ['MAX','MAX_>15','MAX_>30'],
 		x: 'right'
 	    },
 	    grid: {
@@ -146,32 +143,24 @@ $.getJSON('http://feed.genghuiluo.cn/weibo/key_num.json', function(data){
 	        type: 'value'
 	    },
 	    series: [
-		/*j
 	        {
 	            name:'MAX',
 	            type:'line',
-	            step: 'start',
-	            data:max_data
-	        },
-		*/
-	        {
-	            name:'TOP10-AVG',
-	            type:'line',
-	            step: 'middle',
-	            data:top10_data
+	            //step:'start',
+	            data:max_key_num
 	        },
 	        {
-	            name:'TOP20-AVG',
+	            name:'MAX_>15',
 	            type:'line',
-	            step: 'end',
-	            data:top20_data
+	            //step:'middle',
+	            data:large_15_max
 	        },
-		{
-	            name:'TOP50-AVG',
+	        {
+	            name:'MAX_>30',
 	            type:'line',
-	            step: 'end',
-	            data:top50_data
-	        }
+	            //step:'end',
+	            data:large_30_max
+	        },
 	    ]
 	};
  
