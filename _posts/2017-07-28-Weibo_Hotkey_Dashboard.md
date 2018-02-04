@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Weibo Hotkey Dashboard
-date: 2018-02-04 20:56:07 +0800
+date: 2018-02-04 20:58:17 +0800
 categories: web
 ---
 
@@ -146,19 +146,19 @@ $.getJSON('http://feed.genghuiluo.cn/weibo/key_num.json', function(data){
 	        {
 	            name:'MAX',
 	            type:'line',
-	            step:'start',
+	            //step:'start',
 	            data:max_key_num
 	        },
 	        {
 	            name:'MAX_>15',
 	            type:'line',
-	            step:'middle',
+	            //step:'middle',
 	            data:large_15_max
 	        },
 	        {
 	            name:'MAX_>30',
 	            type:'line',
-	            step:'end',
+	            //step:'end',
 	            data:large_30_max
 	        },
 	    ]
