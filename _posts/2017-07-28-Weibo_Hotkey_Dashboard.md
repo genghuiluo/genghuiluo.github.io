@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Weibo Hotkey Dashboard
-date: 2018-02-04 20:58:17 +0800
+date: 2018-02-04 21:06:07 +0800
 categories: web
 ---
 
@@ -49,7 +49,7 @@ $.getJSON('http://feed.genghuiluo.cn/weibo/top10.json', function(data){
                 },
 		axisLabel: {
 			interval: 0, //横轴信息全部显示
-                	rotate: -30,
+                	rotate: -20,
                 }
             },
             yAxis: {
@@ -101,14 +101,14 @@ $.getJSON('http://feed.genghuiluo.cn/weibo/key_num.json', function(data){
 
 	var xdata = [];
 	var max_key_num = [];
-	var large_15_max = [];
-	var large_30_max = [];
+	var large_10_max = [];
+	var large_20_max = [];
 
 	$.each( data, function( key, val ) {
 		xdata.push(val.dayofweek);	
 		max_key_num.push(val.max_key_num);	
-		large_15_max.push(val.large_15_max);	
-		large_30_max.push(val.large_30_max);	
+		large_10_max.push(val.large_10_max);	
+		large_20_max.push(val.large_20_max);	
         });
 
 	option = {
@@ -120,7 +120,7 @@ $.getJSON('http://feed.genghuiluo.cn/weibo/key_num.json', function(data){
 	        trigger: 'axis'
 	    },
 	    legend: {
-	        data: ['MAX','MAX_>15','MAX_>30'],
+	        data: ['MAX','MAX_>10','MAX_>20'],
 		x: 'right'
 	    },
 	    grid: {
@@ -150,16 +150,16 @@ $.getJSON('http://feed.genghuiluo.cn/weibo/key_num.json', function(data){
 	            data:max_key_num
 	        },
 	        {
-	            name:'MAX_>15',
+	            name:'MAX_>10',
 	            type:'line',
 	            //step:'middle',
-	            data:large_15_max
+	            data:large_10_max
 	        },
 	        {
-	            name:'MAX_>30',
+	            name:'MAX_>20',
 	            type:'line',
 	            //step:'end',
-	            data:large_30_max
+	            data:large_20_max
 	        },
 	    ]
 	};
