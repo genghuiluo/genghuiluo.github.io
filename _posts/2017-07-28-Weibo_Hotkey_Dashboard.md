@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Weibo Hotkey Dashboard
-date: 2018-02-24 14:33:10 +0800
+date: 2018-02-24 17:35:59 +0800
 categories: web
 ---
 
@@ -177,11 +177,29 @@ function updatePunchCard(element,title) {
 $.getJSON('http://feed.genghuiluo.cn/weibo/lastweek_hotkey.json', function(data){
 
 	var hours = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23'];
-	var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-	var ydata = [];
+	var days = ['Saturday', 'Friday', 'Thursday', 'Wednesday', 'Tuesday', 'Monday', 'Sunday'];
+	var ydatas = [];
+	var ydata = {};
+	var ydata_d = [];
+	var ldata = [];
 
 	$.each( data, function( key, val ) {
-		ydata.push([val.day, val.hour, val.key_num, val.key_text]);	
+		if ( ldata.indexOf(val.key_text) === -1 ) {
+			ydata['name'] = val.key_text;
+			ydata['type'] = 'scatter';
+			ydata['coordinateSystem'] = 'polar';
+			ydata['symbolSize'] = function (val) {return val[2] * 2;};
+			ydata['data'] = ydata_d;
+			ydatas.push(ydata);
+	
+			ydata = {};
+			ydata_d = [];
+			
+			ldata.push(val.key_text);
+			ydata_d.push([val.day, val.hour, val.key_num, val.key_text]);
+		} else {
+			ydata_d.push([val.day, val.hour, val.key_num, val.key_text]);
+		}
         });
 
 	option = {
@@ -224,18 +242,7 @@ $.getJSON('http://feed.genghuiluo.cn/weibo/lastweek_hotkey.json', function(data)
 	            rotate: 45
 	        }
 	    },
-	    series: [{
-	        name: '#HotKey',
-	        type: 'scatter',
-	        coordinateSystem: 'polar',
-	        symbolSize: function (val) {
-	            return val[2] / 50000;
-	        },
-	        data: ydata,
-	        animationDelay: function (idx) {
-	            return idx * 5;
-	        }
-	    }]
+	    series: ydatas 
 	};
 
 	element.setOption(option);
