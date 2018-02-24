@@ -1,17 +1,20 @@
 ---
 layout: post
 title: Weibo Hotkey Dashboard
-date: 2018-02-04 21:11:46 +0800
+date: 2018-02-24 12:02:39 +0800
 categories: web
 ---
 
 <div id="weibo_top10" style="width: 100%; min-height: 600px"></div>
 <div id="weibo_key_num" style="width: 100%; min-height: 600px"></div>
+<div id="weibo_lastweek_hotkey" style="width: 100%; min-height: 600px"></div>
+
 <script type="text/javascript">
 
 // 基于准备好的dom，初始化echarts实例
 var weibo_top10_chart = echarts.init(document.getElementById('weibo_top10'));
 var weibo_key_num_chart = echarts.init(document.getElementById('weibo_key_num'));
+var weibo_lastweek_hotkey_chart = echarts.init(document.getElementById('weibo_lastweek_hotkey'));
 
 function updateBarChart(element,title) {
 $.getJSON('http://feed.genghuiluo.cn/weibo/top10.json', function(data){
@@ -169,6 +172,76 @@ $.getJSON('http://feed.genghuiluo.cn/weibo/key_num.json', function(data){
 	})
 }
 
+
+function updatePunchCard(element,title) {
+$.getJSON('http://feed.genghuiluo.cn/weibo/lastweek_hotkey.json', function(data){
+
+	var hours = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23'];
+	var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+	var ydata = [];
+
+	$.each( data, function( key, val ) {
+		ydata.push([val.day, val.hour, val.key_num, val.key_text]);	
+        });
+
+	option = {
+	    title: {
+	        text: title,
+		x: 'center'
+	    },
+	    legend: {
+	        data: ['Punch Card'],
+	        left: 'right'
+	    },
+	    polar: {},
+	    tooltip: {
+	        formatter: function (params) {
+	            return params.value[3];
+	        }
+	    },
+	    angleAxis: {
+	        type: 'category',
+	        data: hours,
+	        boundaryGap: false,
+	        splitLine: {
+	            show: true,
+	            lineStyle: {
+	                color: '#999',
+	                type: 'dashed'
+	            }
+	        },
+	        axisLine: {
+	            show: false
+	        }
+	    },
+	    radiusAxis: {
+	        type: 'category',
+	        data: days,
+	        axisLine: {
+	            show: false
+	        },
+	        axisLabel: {
+	            rotate: 45
+	        }
+	    },
+	    series: [{
+	        name: 'Punch Card',
+	        type: 'scatter',
+	        coordinateSystem: 'polar',
+	        symbolSize: function (val) {
+	            return val[2] * 2;
+	        },
+	        data: ydata,
+	        animationDelay: function (idx) {
+	            return idx * 5;
+	        }
+	    }]
+	};
+
+	element.setOption(option);
+
+	})
+} 
 
 $(document).ready(function() {
     updateBarChart(weibo_top10_chart,'#Hotkey# on rank count TOP10');

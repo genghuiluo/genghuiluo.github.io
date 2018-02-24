@@ -1,7 +1,7 @@
 ---
 layout: post
-title: 《社交网络》ranking girls
-date: 2017-08-19 13:42:36 +0800
+title: How do they rank grils in move "Social Network"?
+date: 2018-02-15 16:55:25 +0800
 categories: algorithm
 ---
 ### crawl girls picture

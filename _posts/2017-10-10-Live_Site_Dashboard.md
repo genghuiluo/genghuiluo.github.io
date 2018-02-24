@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Live site dashboard 
-date: 2018-01-30 21:58:46 +0800
+date: 2018-02-24 12:01:36 +0800
 categories: web
 ---
 
@@ -116,7 +116,7 @@ function updateLineChart(month, element, title) {
     		    {
     		        name:'熊猫',
     		        type:'line',
-    		        stack: '总量',
+    		        stack: 'total_view_by_hour',
     		        areaStyle: {normal: {}},
     		        data: ydata_panda
     		    },
