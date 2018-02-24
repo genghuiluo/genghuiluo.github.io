@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Weibo Hotkey Dashboard
-date: 2018-02-24 18:12:35 +0800
+date: 2018-02-24 18:24:54 +0800
 categories: web
 ---
 
@@ -210,7 +210,7 @@ $.getJSON('http://feed.genghuiluo.cn/weibo/lastweek_hotkey.json', function(data)
 		x: 'center'
 	    },
 	    legend: {
-	        data: ldata,
+	        data: ldata.slice(0,19), // only 20 key text
 	        x: 'right',
 		orient: 'vertical',
 		padding: 0,
