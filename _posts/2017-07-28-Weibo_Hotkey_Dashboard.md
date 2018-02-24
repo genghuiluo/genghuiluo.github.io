@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Weibo Hotkey Dashboard
-date: 2018-02-24 17:48:01 +0800
+date: 2018-02-24 17:50:53 +0800
 categories: web
 ---
 
@@ -184,17 +184,19 @@ $.getJSON('http://feed.genghuiluo.cn/weibo/lastweek_hotkey.json', function(data)
 	var ldata = [];
 
 	$.each( data, function( key, val ) {
-		if ( ldata.indexOf(val.key_text) == -1 && ldata.length != 0 ) {
-			ydata['name'] = val.key_text;
-			ydata['type'] = 'scatter';
-			ydata['coordinateSystem'] = 'polar';
-			ydata['symbolSize'] = function (value) {return value[2] * 2;};
-			ydata['data'] = ydata_d;
-			ydatas.push(ydata);
+		if ( ldata.indexOf(val.key_text) == -1 ) {
+			if ( ldata.length != 0 ) {
+				ydata['name'] = val.key_text;
+				ydata['type'] = 'scatter';
+				ydata['coordinateSystem'] = 'polar';
+				ydata['symbolSize'] = function (value) {return value[2] * 2;};
+				ydata['data'] = ydata_d;
+				ydatas.push(ydata);
 	
-			ydata = {};
-			ydata_d = [];
-			
+				ydata = {};
+				ydata_d = [];
+			}
+
 			ldata.push(val.key_text);
 			ydata_d.push([val.day, val.hour, val.key_num, val.key_text]);
 		} else {
