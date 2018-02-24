@@ -1,13 +1,13 @@
 ---
 layout: post
 title: Weibo Hotkey Dashboard
-date: 2018-02-24 12:16:16 +0800
+date: 2018-02-24 14:28:34 +0800
 categories: web
 ---
 
 <div id="weibo_top10" style="width: 100%; min-height: 600px"></div>
 <div id="weibo_key_num" style="width: 100%; min-height: 600px"></div>
-<div id="weibo_lastweek_hotkey" style="width: 100%; min-height: 600px"></div>
+<div id="weibo_lastweek_hotkey" style="width: 100%; min-height: 800px"></div>
 
 <script type="text/javascript">
 
@@ -190,7 +190,7 @@ $.getJSON('http://feed.genghuiluo.cn/weibo/lastweek_hotkey.json', function(data)
 		x: 'center'
 	    },
 	    legend: {
-	        data: ['Punch Card'],
+	        data: ['#Hotkey'],
 	        left: 'right'
 	    },
 	    polar: {},
@@ -225,11 +225,11 @@ $.getJSON('http://feed.genghuiluo.cn/weibo/lastweek_hotkey.json', function(data)
 	        }
 	    },
 	    series: [{
-	        name: 'Punch Card',
+	        name: '#HotKey',
 	        type: 'scatter',
 	        coordinateSystem: 'polar',
 	        symbolSize: function (val) {
-	            return val[2] / 100000;
+	            return val[2] / 10000;
 	        },
 	        data: ydata,
 	        animationDelay: function (idx) {
@@ -246,13 +246,16 @@ $.getJSON('http://feed.genghuiluo.cn/weibo/lastweek_hotkey.json', function(data)
 $(document).ready(function() {
     updateBarChart(weibo_top10_chart,'#Hotkey# on rank count TOP10');
     updateLineChart(weibo_key_num_chart,'#Hotkey# index by DayofWeek');
+    updatePunchCard(weibo_lastweek_hotkey_chart,'Last Week #Hotkey#');
 });
 
 //refresh each 1800s
+// Uncaught TypeError: element.setOption is not a function
+/*
 var refresh=window.setInterval(function(){
     updateBarChart(weibo_top10,'#Hotkey# on rank count TOP10');
     updateLineChart(weibo_key_num_chart,'#Hotkey# index by DayofWeek');
     updatePunchCard(weibo_lastweek_hotkey_chart,'Last Week #Hotkey#');
 },1800000);        
-
+*/
 </script>
