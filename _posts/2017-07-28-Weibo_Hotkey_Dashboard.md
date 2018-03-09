@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Weibo Hotkey Dashboard
-date: 2018-02-24 18:38:09 +0800
+date: 2018-03-09 21:21:32 +0800
 categories: web
 ---
 
@@ -103,15 +103,21 @@ $.getJSON('http://feed.genghuiluo.cn/weibo/key_num.json', function(data){
 
 
 	var xdata = [];
-	var max_key_num = [];
-	var large_3_max = [];
-	var large_10_max = [];
+	var lastweek_max_keynum = [];
+	var lastmonth_max_keynum = [];
+	var lastquater_max_keynum = [];
+	var lastweek_avg_keynum = [];
+	var lastmonth_avg_keynum = [];
+	var lastquater_avg_keynum = [];
 
 	$.each( data, function( key, val ) {
 		xdata.push(val.dayofweek);	
-		max_key_num.push(val.max_key_num);	
-		large_3_max.push(val.large_3_max);	
-		large_10_max.push(val.large_10_max);	
+		lastweek_max_keynum.push(val.lastweek_max_keynum);
+		lastmonth_max_keynum.push(val.lastmonth_max_keynum);
+		lastquater_max_keynum.push(val.lastquater_max_keynum);
+		lastweek_avg_keynum.push(val.lastweek_avg_keynum);
+		lastmonth_avg_keynum.push(val.lastmonth_avg_keynum);
+		lastquater_avg_keynum.push(val.lastquater_avg_keynum);
         });
 
 	option = {
@@ -123,7 +129,7 @@ $.getJSON('http://feed.genghuiluo.cn/weibo/key_num.json', function(data){
 	        trigger: 'axis'
 	    },
 	    legend: {
-	        data: ['MAX_TOP3','MAX_>3','MAX_>10'],
+	        data: ['LAST_WEEK_MAX','LAST_MONTH_MAX','LAST_QUATER_MAX','LAST_WEEK_AVG','LAST_WEEK_AVG','LAST_QUATER_AVG'],
 		x: 'right'
 	    },
 	    grid: {
@@ -147,23 +153,41 @@ $.getJSON('http://feed.genghuiluo.cn/weibo/key_num.json', function(data){
 	    },
 	    series: [
 	        {
-	            name:'MAX_TOP3',
+	            name:'LAST_WEEK_MAX',
 	            type:'line',
-	            //step:'start',
-	            data:max_key_num
+	            step:'start',
+	            data:lastweek_max_keynum
 	        },
 	        {
-	            name:'MAX_>3',
+	            name:'LAST_MONTH_MAX',
 	            type:'line',
-	            //step:'middle',
-	            data:large_3_max
+	            step:'start',
+	            data:lastmonth_max_keynum
 	        },
 	        {
-	            name:'MAX_>10',
+	            name:'LAST_QUATER_MAX',
 	            type:'line',
-	            //step:'end',
-	            data:large_10_max
+	            step:'end',
+	            data:lastquater_max_keynum
 	        },
+		{
+	            name:'LAST_WEEK_AVG',
+	            type:'line',
+	            step:'start',
+	            data:lastweek_avg_keynum
+	        },
+	        {
+	            name:'LAST_MONTH_AVG',
+	            type:'line',
+	            step:'start',
+	            data:lastmonth_avg_keynum
+	        },
+	        {
+	            name:'LAST_QUATER_AVG',
+	            type:'line',
+	            step:'end',
+	            data:lastquater_avg_keynum
+	        }
 	    ]
 	};
  
@@ -282,7 +306,7 @@ $(document).ready(function() {
 var refresh=window.setInterval(function(){
     updateBarChart(weibo_top10,'#Hotkey# on rank count TOP10');
     updateLineChart(weibo_key_num_chart,'#Hotkey# index by DayofWeek');
-    updatePunchCard(weibo_lastweek_hotkey_chart,'Last Week #Hotkey#');
+    updatePunchCard(weibo_lastweek_hotkey_chart,'[PunchCard] Last Week #Hotkey#');
 },1800000);        
 */
 </script>
