@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Weibo Hotkey Dashboard
-date: 2018-03-09 21:21:32 +0800
+date: 2018-03-09 21:45:11 +0800
 categories: web
 ---
 
@@ -106,18 +106,18 @@ $.getJSON('http://feed.genghuiluo.cn/weibo/key_num.json', function(data){
 	var lastweek_max_keynum = [];
 	var lastmonth_max_keynum = [];
 	var lastquater_max_keynum = [];
-	var lastweek_avg_keynum = [];
-	var lastmonth_avg_keynum = [];
-	var lastquater_avg_keynum = [];
+	//var lastweek_avg_keynum = [];
+	//var lastmonth_avg_keynum = [];
+	//var lastquater_avg_keynum = [];
 
 	$.each( data, function( key, val ) {
 		xdata.push(val.dayofweek);	
 		lastweek_max_keynum.push(val.lastweek_max_keynum);
 		lastmonth_max_keynum.push(val.lastmonth_max_keynum);
 		lastquater_max_keynum.push(val.lastquater_max_keynum);
-		lastweek_avg_keynum.push(val.lastweek_avg_keynum);
-		lastmonth_avg_keynum.push(val.lastmonth_avg_keynum);
-		lastquater_avg_keynum.push(val.lastquater_avg_keynum);
+		//lastweek_avg_keynum.push(val.lastweek_avg_keynum);
+		//lastmonth_avg_keynum.push(val.lastmonth_avg_keynum);
+		//lastquater_avg_keynum.push(val.lastquater_avg_keynum);
         });
 
 	option = {
@@ -129,7 +129,8 @@ $.getJSON('http://feed.genghuiluo.cn/weibo/key_num.json', function(data){
 	        trigger: 'axis'
 	    },
 	    legend: {
-	        data: ['LAST_WEEK_MAX','LAST_MONTH_MAX','LAST_QUATER_MAX','LAST_WEEK_AVG','LAST_WEEK_AVG','LAST_QUATER_AVG'],
+	        //data: ['LAST_WEEK_MAX','LAST_MONTH_MAX','LAST_QUATER_MAX','LAST_WEEK_AVG','LAST_WEEK_AVG','LAST_QUATER_AVG'],
+	        data: ['LAST_WEEK_MAX','LAST_MONTH_MAX','LAST_QUATER_MAX'],
 		x: 'right'
 	    },
 	    grid: {
@@ -155,38 +156,20 @@ $.getJSON('http://feed.genghuiluo.cn/weibo/key_num.json', function(data){
 	        {
 	            name:'LAST_WEEK_MAX',
 	            type:'line',
-	            step:'start',
+	            //step:'start',
 	            data:lastweek_max_keynum
 	        },
 	        {
 	            name:'LAST_MONTH_MAX',
 	            type:'line',
-	            step:'start',
+	            //step:'start',
 	            data:lastmonth_max_keynum
 	        },
 	        {
 	            name:'LAST_QUATER_MAX',
 	            type:'line',
-	            step:'end',
+	            //step:'end',
 	            data:lastquater_max_keynum
-	        },
-		{
-	            name:'LAST_WEEK_AVG',
-	            type:'line',
-	            step:'start',
-	            data:lastweek_avg_keynum
-	        },
-	        {
-	            name:'LAST_MONTH_AVG',
-	            type:'line',
-	            step:'start',
-	            data:lastmonth_avg_keynum
-	        },
-	        {
-	            name:'LAST_QUATER_AVG',
-	            type:'line',
-	            step:'end',
-	            data:lastquater_avg_keynum
 	        }
 	    ]
 	};
