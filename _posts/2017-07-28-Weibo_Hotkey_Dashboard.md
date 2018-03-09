@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Weibo Hotkey Dashboard
-date: 2018-03-09 21:45:11 +0800
+date: 2018-03-09 21:48:55 +0800
 categories: web
 ---
 
@@ -131,7 +131,8 @@ $.getJSON('http://feed.genghuiluo.cn/weibo/key_num.json', function(data){
 	    legend: {
 	        //data: ['LAST_WEEK_MAX','LAST_MONTH_MAX','LAST_QUATER_MAX','LAST_WEEK_AVG','LAST_WEEK_AVG','LAST_QUATER_AVG'],
 	        data: ['LAST_WEEK_MAX','LAST_MONTH_MAX','LAST_QUATER_MAX'],
-		x: 'right'
+		x: 'right',
+		orient: 'vertical'
 	    },
 	    grid: {
 	        left: '3%',
@@ -287,9 +288,9 @@ $(document).ready(function() {
 // Uncaught TypeError: element.setOption is not a function
 /*
 var refresh=window.setInterval(function(){
-    updateBarChart(weibo_top10,'#Hotkey# on rank count TOP10');
-    updateLineChart(weibo_key_num_chart,'#Hotkey# index by DayofWeek');
-    updatePunchCard(weibo_lastweek_hotkey_chart,'[PunchCard] Last Week #Hotkey#');
+    updateBarChart(weibo_top10,'Most #Hotkey# On Top50 rank count 在榜次数');
+    updateLineChart(weibo_key_num_chart,'Max Index of #HotKey# by DayofWeek 最热指数');
+    updatePunchCard(weibo_lastweek_hotkey_chart,'[PunchCard] Last Week #Hotkey# 上周热门');
 },1800000);        
 */
 </script>
