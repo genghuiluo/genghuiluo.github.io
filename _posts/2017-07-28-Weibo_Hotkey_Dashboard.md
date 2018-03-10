@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Weibo Hotkey Dashboard
-date: 2018-03-09 21:55:05 +0800
+date: 2018-03-10 13:46:42 +0800
 categories: web
 ---
 
@@ -103,21 +103,15 @@ $.getJSON('http://feed.genghuiluo.cn/weibo/key_num.json', function(data){
 
 
 	var xdata = [];
-	var lastweek_max_keynum = [];
-	var lastmonth_max_keynum = [];
-	var lastquater_max_keynum = [];
-	//var lastweek_avg_keynum = [];
-	//var lastmonth_avg_keynum = [];
-	//var lastquater_avg_keynum = [];
+	var lastweek_avg_keynum = [];
+	var lastmonth_avg_keynum = [];
+	var lastquater_avg_keynum = [];
 
 	$.each( data, function( key, val ) {
 		xdata.push(val.dayofweek);	
-		lastweek_max_keynum.push(val.lastweek_max_keynum);
-		lastmonth_max_keynum.push(val.lastmonth_max_keynum);
-		lastquater_max_keynum.push(val.lastquater_max_keynum);
-		//lastweek_avg_keynum.push(val.lastweek_avg_keynum);
-		//lastmonth_avg_keynum.push(val.lastmonth_avg_keynum);
-		//lastquater_avg_keynum.push(val.lastquater_avg_keynum);
+		lastweek_avg_keynum.push(val.lastweek_avg_keynum);
+		lastmonth_avg_keynum.push(val.lastmonth_avg_keynum);
+		lastquater_avg_keynum.push(val.lastquater_avg_keynum);
         });
 
 	option = {
@@ -129,8 +123,7 @@ $.getJSON('http://feed.genghuiluo.cn/weibo/key_num.json', function(data){
 	        trigger: 'axis'
 	    },
 	    legend: {
-	        //data: ['LAST_WEEK_MAX','LAST_MONTH_MAX','LAST_QUATER_MAX','LAST_WEEK_AVG','LAST_WEEK_AVG','LAST_QUATER_AVG'],
-	        data: ['LAST_WEEK_MAX','LAST_MONTH_MAX','LAST_QUATER_MAX'],
+	        data: ['LAST_WEEK_AVG','LAST_MONTH_AVG','LAST_QUATER_AVG'],
 		x: 'right',
 		orient: 'vertical'
 	    },
@@ -155,22 +148,22 @@ $.getJSON('http://feed.genghuiluo.cn/weibo/key_num.json', function(data){
 	    },
 	    series: [
 	        {
-	            name:'LAST_WEEK_MAX',
+	            name:'LAST_WEEK_AVG',
 	            type:'line',
-	            //step:'start',
-	            data:lastweek_max_keynum
+	            step:'middle',
+	            data:lastweek_avg_keynum
 	        },
 	        {
-	            name:'LAST_MONTH_MAX',
+	            name:'LAST_MONTH_AVG',
 	            type:'line',
-	            //step:'start',
-	            data:lastmonth_max_keynum
+	            step:'middle',
+	            data:lastmonth_avg_keynum
 	        },
 	        {
-	            name:'LAST_QUATER_MAX',
+	            name:'LAST_QUATER_AVG',
 	            type:'line',
-	            //step:'end',
-	            data:lastquater_max_keynum
+	            step:'middle',
+	            data:lastquater_avg_keynum
 	        }
 	    ]
 	};
@@ -280,7 +273,7 @@ $.getJSON('http://feed.genghuiluo.cn/weibo/lastweek_hotkey.json', function(data)
 
 $(document).ready(function() {
 	updateBarChart(weibo_top10_chart,'Most #Hotkey# On Top50 rank count 在榜次数');
-    	updateLineChart(weibo_key_num_chart,'Max Index of #HotKey# by DayofWeek 最热指数');
+    	updateLineChart(weibo_key_num_chart,'Max Index of #HotKey# by DayofWeek 平均指数');
     	updatePunchCard(weibo_lastweek_hotkey_chart,'[PunchCard] Last Week #Hotkey# 上周热门');
 });
 
