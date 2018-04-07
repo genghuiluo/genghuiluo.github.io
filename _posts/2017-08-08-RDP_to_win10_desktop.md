@@ -1,7 +1,7 @@
 ---
 layout: post
-title: RDP to win10 desktop
-date: 2017-08-08 13:50:38 +0800
+title: how RDP to win10 desktop
+date: 2018-04-07 14:42:41 +0800
 categories: windows
 ---
 
